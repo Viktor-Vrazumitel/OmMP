@@ -1,5 +1,5 @@
 {
-  "name": "ommp",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,25 +7,14 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
-    "express-session": "^1.17.2",
-    "hbs": "^4.2.0",
-    "morgan": "^1.10.0",
-    "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
-    "sequelize": "^6.18.0",
-    "sequelize-cli": "^6.4.1",
-    "sha256": "^0.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -51,18 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rKefear/OmMP.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rKefear/OmMP/issues"
-  },
-  "homepage": "https://github.com/rKefear/OmMP#readme"
+  }
 }
