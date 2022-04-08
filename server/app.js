@@ -1,5 +1,5 @@
-require("dotenv").config();
 const express = require("express");
+require("dotenv").config();
 const session = require('express-session');
 const morgan = require("morgan");
 const cors = require("cors");
@@ -22,20 +22,20 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use(express.json());
-app.use(
-  session({
-    name: app.get('cookieName'),
-    secret: COOKIE_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: new FileStore(),
-    cookie: {
-      secure: false,
-      httpOnly: true,
-      maxAge: 1e3 * 86400, // COOKIE'S LIFETIME — 1 DAY
-    },
-  }),
-);
+// app.use(
+//   session({
+//     name: app.get('cookieName'),
+//     secret: COOKIE_SECRET,
+//     resave: false,
+//     saveUninitialized: false,
+//     store: new FileStore(),
+//     cookie: {
+//       secure: false,
+//       httpOnly: true,
+//       maxAge: 1e3 * 86400, // COOKIE'S LIFETIME — 1 DAY
+//     },
+//   }),
+// );
 
 // APP'S ROUTES
 app.use('/auth', authRouter);
