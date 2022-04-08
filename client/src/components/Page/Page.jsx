@@ -8,6 +8,7 @@ function MainPage() {
   return ( 
     <>
     <div className={style.back}>
+
       <div className={style.info}>
         INFO
       </div>
@@ -26,6 +27,8 @@ function MainPage() {
         <Room />
         <Room />
       </div>
+
+
     </div>
     </>
    );
