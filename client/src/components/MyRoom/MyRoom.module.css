@@ -1,0 +1,23 @@
+.main {
+  width: 77vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic {
+  border: 1px red solid;
+  width: 38.3vw;
+  height: 90vh;
+}
+
+.chat {
+  border: 1px red solid;
+  width: 38.3vw;
+  height: 90vh;
+}
+
+.input {
+  width: 76.6vw;
+  height: 10vh;
+}
