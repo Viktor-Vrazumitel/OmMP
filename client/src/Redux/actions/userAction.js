@@ -1,4 +1,4 @@
-import { ADD_FRIEND} from "../type/type"
+import { ADD_FRIEND, DELETE_USER, SET_USER} from "../type/type"
 
 export const addFriendAction = (user) =>{
     return{
@@ -6,10 +6,10 @@ export const addFriendAction = (user) =>{
         payload: user
     }
 }
-
-// export const findFriendAction = (user)=>{
-//     return{
-//         type: FIND_FRIEND,
-//         payload: user
-//     }
-// }
+export const setUser = (user) => ({
+  type: SET_USER,
+  payload: user,
+});
+export const deleteUser = () => ({
+  type: DELETE_USER,
+});
