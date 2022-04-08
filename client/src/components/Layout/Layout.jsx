@@ -1,7 +1,5 @@
 import MainPage from '../Page/Page';
-import Friend from '../UI/FriendIcon/FriendIcon';
 import MyInput from '../UI/Input/Input';
-import Input from '../UI/Input/Input';
 import Menu from '../UI/Menu/Menu';
 import ModalWindow from '../UI/ModalWindow/ModalWindow';
 import style from './Layout.module.css'
@@ -9,7 +7,11 @@ import M from 'materialize-css';
 import FriendList from '../FriendList/FriendList';
 import { Route, Routes } from 'react-router-dom';
 import Signin from '../Signin/Signin';
+import { useDispatch } from 'react-redux';
+import { findBaseUser } from '../../Redux/thunk/userThunkServer';
+
 import MyRoom from '../MyRoom/MyRoom';
+
 
 
 function modal(){
@@ -19,6 +21,12 @@ function modal(){
 
 function Layout() {
   M.AutoInit();
+  const dispatch = useDispatch()
+
+
+  function findUser(input) {
+    dispatch(findBaseUser(input))
+  }
 
   
 
@@ -72,7 +80,7 @@ function Layout() {
       <div className={style.btnAdd}>
       <a className="btn-floating btn-large waves-effect waves-light green modal-trigger" href='#modal1'  onClick={modal} ><i className="material-icons">add</i></a>
       
-      <ModalWindow/>
+      <ModalWindow funcHandler={findUser}/>
       </div>
     </div>
 
