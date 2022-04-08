@@ -7,10 +7,27 @@ function Signin() {
 
 
       <div className={style.titleBlock}>
-        auth
+        <h3>Registration</h3>
       </div>
       <div className={style.inputBlock}>
-      inputs
+          <form className={style.form}>
+
+                <h4>Login</h4>
+                <input type="text" />
+                <span>Email</span>
+                <input type='email' />
+                <h4>Password</h4>
+                <input type="password" name="" id="" />
+                <hr />
+                <div>
+
+                </div>
+                <button type="submit">registaration</button>
+                
+
+
+          </form>
+
       </div>
 
     </div>
