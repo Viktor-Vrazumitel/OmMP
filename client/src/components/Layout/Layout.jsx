@@ -3,10 +3,25 @@ import Friend from '../UI/FriendIcon/FriendIcon';
 import MyInput from '../UI/Input/Input';
 import Input from '../UI/Input/Input';
 import Menu from '../UI/Menu/Menu';
+import ModalWindow from '../UI/ModalWindow/ModalWindow';
 import style from './Layout.module.css'
+import M from 'materialize-css';
+import FriendList from '../FriendList/FriendList';
 
+function modal(){
+  const elems = document.querySelectorAll('.modal');
+  const instances = M.Modal.init(elems);
+}
 
 function Layout() {
+  M.AutoInit();
+
+  
+
+  
+  
+   
+
   return ( 
     <div className={style.bars}>
       
@@ -37,14 +52,16 @@ function Layout() {
         <MainPage />
 
     <div className={style.right}>
+      <FriendList/>
+      {/* <Friend />
       <Friend />
       <Friend />
-      <Friend />
-      <Friend />
+      <Friend /> */}
       
       <div className={style.btnAdd}>
-
-      <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">add</i></a>
+      <a className="btn-floating btn-large waves-effect waves-light green modal-trigger" href='#modal1'  onClick={modal} ><i className="material-icons">add</i></a>
+      
+      <ModalWindow/>
       </div>
     </div>
 
