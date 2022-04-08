@@ -17,7 +17,7 @@ function Layout() {
     <div>
       <MyInput />
     </div>
-    <div>
+    <div className={style.menu}>
       <Menu />
     </div>
      <div className={style.btnBlock}>

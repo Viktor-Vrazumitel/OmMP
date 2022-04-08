@@ -1,8 +1,8 @@
 .menu {
-  width: 293px;
+  width: 17vw;
   background-color: tomato;
   opacity: 0.8;
   border-radius: 22px;
-  min-height: 630px;
-  margin-left: 26px;
+  height: 60vh;
+  margin-left: 7%;
 }
