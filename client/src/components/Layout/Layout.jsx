@@ -49,15 +49,17 @@ function Layout() {
     </div>
      <div className={style.btnBlock}>
         <div >
-        <a className=" btn-large"><i className="material-icons left">headset</i></a>
+        <button className={style.headset}><i className="material-icons left">headset</i></button>
           </div>
           <div>
-        <a className=" btn-large"><i className="material-icons left">volume_off</i></a>
+          <button className={style.headset}><i className="material-icons left">volume_off</i></button>
+
 
           </div>
           <div>
           </div>
-        <a className=" btn-large"><i className="material-icons left">settings</i></a>
+          <button className={style.headset}><i className="material-icons left">settings</i></button>
+
      </div>
    </div>
     
