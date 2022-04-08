@@ -7,6 +7,9 @@ import ModalWindow from '../UI/ModalWindow/ModalWindow';
 import style from './Layout.module.css'
 import M from 'materialize-css';
 import FriendList from '../FriendList/FriendList';
+import { Route, Routes } from 'react-router-dom';
+import Signin from '../Signin/Signin';
+
 
 function modal(){
   const elems = document.querySelectorAll('.modal');
@@ -49,7 +52,12 @@ function Layout() {
      </div>
    </div>
     
-        <MainPage />
+
+    <Routes>
+       <Route path='/signin' element={<Signin />}/>
+       <Route path='/' element={<MainPage />}/>
+
+     </Routes>
 
     <div className={style.right}>
       <FriendList/>
