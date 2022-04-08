@@ -13,7 +13,7 @@ function MainPage() {
         INFO
       </div>
 
-      <button type="button" class="btn btn-lg btn-success">Primary button</button>
+      <button type="button" className="btn btn-lg btn-success">Primary button</button>
 
       <div className={style.rooms}>
         <Room />
