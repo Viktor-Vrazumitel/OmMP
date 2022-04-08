@@ -48,4 +48,11 @@ display: flex;
   display: flex;
 }
 
+.headset {
+  width: 6.15vw;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
