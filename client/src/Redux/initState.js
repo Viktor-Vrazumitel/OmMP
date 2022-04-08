@@ -1,4 +1,4 @@
-const initState = {
+export const initState = {
   rooms: [],
   friend: [],
   user: null,
