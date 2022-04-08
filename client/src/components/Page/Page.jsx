@@ -6,7 +6,7 @@ function MainPage() {
   return ( 
     <>
     <div className={style.back}>
-    Page
+      PAGE
     </div>
     </>
    );
