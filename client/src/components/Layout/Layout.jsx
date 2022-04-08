@@ -10,6 +10,9 @@ import Signin from '../Signin/Signin';
 import { useDispatch } from 'react-redux';
 import { findBaseUser } from '../../Redux/thunk/userThunkServer';
 
+import MyRoom from '../MyRoom/MyRoom';
+
+
 
 function modal(){
   const elems = document.querySelectorAll('.modal');
@@ -46,15 +49,15 @@ function Layout() {
     </div>
      <div className={style.btnBlock}>
         <div >
-        <a className="waves-effect waves-light btn-large"><i className="material-icons left">headset</i></a>
+        <a className=" btn-large"><i className="material-icons left">headset</i></a>
           </div>
           <div>
-        <a className="waves-effect waves-light btn-large"><i className="material-icons left">volume_off</i></a>
+        <a className=" btn-large"><i className="material-icons left">volume_off</i></a>
 
           </div>
           <div>
           </div>
-        <a className="waves-effect waves-light btn-large"><i className="material-icons left">settings</i></a>
+        <a className=" btn-large"><i className="material-icons left">settings</i></a>
      </div>
    </div>
     
@@ -62,6 +65,8 @@ function Layout() {
     <Routes>
        <Route path='/signin' element={<Signin />}/>
        <Route path='/' element={<MainPage />}/>
+       <Route path='/room' element={<MyRoom />}/>
+
 
      </Routes>
 
