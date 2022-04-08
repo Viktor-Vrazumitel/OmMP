@@ -7,7 +7,7 @@ function MainPage() {
   return ( 
     <>
     <div className={style.back}>
-    <Signin />
+Page
     </div>
     </>
    );

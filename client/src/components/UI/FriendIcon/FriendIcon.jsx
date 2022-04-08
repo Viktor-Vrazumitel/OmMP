@@ -1,10 +1,12 @@
 import style from './FriendIcon.module.css'
 
 
-function Friend() {
+function Friend({name}) {
+
+
   return ( 
 <div className={style.icon}>
-  drug
+ {name}
 </div>
    );
 }
