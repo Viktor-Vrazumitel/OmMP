@@ -1,4 +1,5 @@
 import AudioStream from '../AudioStream/AudioStream';
+import ChatWindow from '../Chat/Chat';
 import style from './MyRoom.module.css'
 
 
@@ -7,10 +8,10 @@ function MyRoom() {
   return ( 
     <div className={style.main}>
       <div className={style.pic}>
-        <AudioStream />
+        {/* <AudioStream /> */}
       </div>
       <div className={style.chat}>
-        CHAT
+        <ChatWindow />
       </div>
       <div className={style.input}>
         <input type="text" />
