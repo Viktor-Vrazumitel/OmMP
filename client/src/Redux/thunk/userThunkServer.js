@@ -13,3 +13,4 @@ export const createBaseRoom =(title) =>(dispatch)=>{
     .then(res=> dispatch(addFriendAction(res.data)))
 }
 
+

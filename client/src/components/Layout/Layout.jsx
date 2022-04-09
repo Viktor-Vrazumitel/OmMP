@@ -16,6 +16,7 @@ import MyRoom from '../MyRoom/MyRoom';
 
 function modal(){
   const elems = document.querySelectorAll('.modal');
+  console.log(elems);
   const instances = M.Modal.init(elems);
 }
 
