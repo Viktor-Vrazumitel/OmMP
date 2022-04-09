@@ -55,13 +55,20 @@ app.post("/search", async (req, res) => {
   res.json(user);
 });
 
+app.get("/room", async (req, res) => {
+   
+    const rooms = await Room.findAll();
+    
+      res.json(rooms);
+    });
 
 app.post("/room", async (req, res) => {
-  const  {title}  = req.body
-  const user = await Room.findOne({ where: { title } });
-  console.log(user)
-    
-    res.json(user);
+  const  {title,user_id}  = req.body
+
+  
+  const room = await Room.create({ title,user_id } );
+  console.log(room)
+    res.json(room);
   });
 
 

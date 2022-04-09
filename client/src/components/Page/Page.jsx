@@ -1,5 +1,6 @@
 
 import Room from '../Room/Room';
+import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css'
 
 
@@ -14,20 +15,12 @@ function MainPage() {
       </div>
 
 
-      <button type="button" class={`btn btn-lg btn-success ${style.btn}`}>Войти</button>
+      <button type="button" className={`btn btn-lg btn-success ${style.btn}`}>Войти</button>
 
 
       <div className={style.rooms}>
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
+        <RoomList/>
+        
       </div>
 
 

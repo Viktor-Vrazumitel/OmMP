@@ -1,12 +1,21 @@
-import { ADD_FRIEND, DELETE_USER, SET_USER} from "../type/type"
+import { ADD_FRIEND, DELETE_FRIEND_OUT, DELETE_USER, SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
+import { addRoom } from "./roomAction";
+
+
 export const addFriendAction = (user) =>{
     
     return{
         type: ADD_FRIEND,
         payload: user
     }
+}
+
+export const deleteListFriendSingout =()=>{
+  return{
+    type: DELETE_FRIEND_OUT
+  }
 }
 export const setUser = (user) => ({
   type: SET_USER,
@@ -21,6 +30,7 @@ export const getUserFromServer = (id) => async (dispatch) => {
   if (response.status === 200) {
     const currentUser = await response.json();
     dispatch(setUser(currentUser));
+    dispatch(addRoom)
   }
   dispatch(disableLoader());
 };
@@ -75,6 +85,7 @@ export const signOut = () => async (dispatch) => {
   });
   if (response.status === 200) {
     dispatch(deleteUser());
+    dispatch(deleteListFriendSingout())
   }
 };
 
