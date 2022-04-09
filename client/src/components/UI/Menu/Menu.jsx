@@ -1,20 +1,25 @@
 import { useState } from "react";
 import style from "./Menu.module.css";
 import M from "materialize-css";
-import ModalWindow from "../ModalWindow/ModalWindow";
 import { useDispatch } from "react-redux";
 import { createBaseRoom } from "../../../Redux/thunk/userThunkServer";
 import MyInput from "../Input/Input";
+import ModalTest from "../ModalTest/ModalTest";
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems,{dismissible:false});
-})
+
+
 
 
 function Menu() {
+  document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.modal');
+     M.Modal.init(elems[0]);
+     var instance = M.Modal.getInstance(elems[0]);
+  })
   M.AutoInit();
   
+
+
   const [input, setInput] = useState('');
   const [stat, setStat] = useState(false);
   const dispatch = useDispatch()
@@ -29,8 +34,9 @@ function Menu() {
   return (
     <>
       <div className={style.menu}>
-        {stat ? <button>my room</button> : <button data-target="modal2" className="btn modal-trigger" >create room</button>}
-        <div id="modal2" className="modal">
+        {stat ? <button>my room</button> : <button type='button' data-target="modal2" className="btn modal-trigger" >create room</button>}
+       <ModalTest/>
+        {/* <div id="modal2" className="modal">
       <div className="modal-content">
         <h4>Modal Header</h4>
         <MyInput input={input} setInput={setInput}/>
@@ -40,7 +46,7 @@ function Menu() {
           Добавить
         </button>
       </div>
-    </div>
+    </div> */}
       </div>
     </>
   );

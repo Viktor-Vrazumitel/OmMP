@@ -18,7 +18,23 @@ module.exports = {
          createdAt: new Date(),
          updatedAt: new Date(),
         
-     }], {});
+     },
+     {
+      id: 2,
+      title: 'ClassicRoom',
+      user_id:2,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     
+  },
+  {
+    id: 3,
+    title: 'RockRoom',
+    user_id:1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+   
+}], {});
   },
 
   async down (queryInterface, Sequelize) {
