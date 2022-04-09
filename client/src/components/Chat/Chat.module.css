@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+}
+
+.sendBtn {
+  background-color: green;
+  width: 7vw;
+  height: 6vh;
+}
