@@ -2,6 +2,7 @@ import { ADD_FRIEND, DELETE_USER, SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
 export const addFriendAction = (user) =>{
+    
     return{
         type: ADD_FRIEND,
         payload: user

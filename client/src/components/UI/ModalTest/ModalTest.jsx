@@ -3,12 +3,12 @@ import MyInput from "../Input/Input";
 
 
 
-function ModalWindow({funcHandler}) {
+function ModalTest({funcHandler}) {
   const [input, setInput] = useState('');
   
 
   return (
-    <div id="modal1" className="modal">
+    <div id="modal2" className="modal" style={{position:'absolute',zIndex:'0'}}>
       <div className="modal-content">
         <h4>Modal Header</h4>
         <MyInput input={input} setInput={setInput}/>
@@ -22,4 +22,4 @@ function ModalWindow({funcHandler}) {
   );
 }
 
-export default ModalWindow;
+export default ModalTest;

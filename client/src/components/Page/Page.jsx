@@ -13,7 +13,9 @@ function MainPage() {
         INFO
       </div>
 
+
       <button type="button" class={`btn btn-lg btn-success ${style.btn}`}>Войти</button>
+
 
       <div className={style.rooms}>
         <Room />

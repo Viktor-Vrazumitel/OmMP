@@ -1,7 +1,5 @@
 import MainPage from '../Page/Page';
-import Friend from '../UI/FriendIcon/FriendIcon';
 import MyInput from '../UI/Input/Input';
-import Input from '../UI/Input/Input';
 import Menu from '../UI/Menu/Menu';
 import ModalWindow from '../UI/ModalWindow/ModalWindow';
 import style from './Layout.module.css'
@@ -9,6 +7,8 @@ import M from 'materialize-css';
 import FriendList from '../FriendList/FriendList';
 import { Route, Routes } from 'react-router-dom';
 import Signin from '../Signin/Signin';
+import { useDispatch } from 'react-redux';
+import { findBaseUser } from '../../Redux/thunk/userThunkServer';
 import MyRoom from '../MyRoom/MyRoom';
 import SignIn from '../Forms/SignIn/SignIn';
 import SignUp from '../Forms/SignUp/SignUp'
@@ -16,11 +16,18 @@ import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
 function modal(){
   const elems = document.querySelectorAll('.modal');
+  console.log(elems);
   const instances = M.Modal.init(elems);
 }
 
 function Layout() {
   M.AutoInit();
+  const dispatch = useDispatch()
+
+
+  function findUser(input) {
+    dispatch(findBaseUser(input))
+  }
 
   
 
@@ -43,15 +50,17 @@ function Layout() {
     </div>
      <div className={style.btnBlock}>
         <div >
-        <a className=" btn-large"><i className="material-icons left">headset</i></a>
+        <button className={style.headset}><i className="material-icons left">headset</i></button>
           </div>
           <div>
-        <a className=" btn-large"><i className="material-icons left">volume_off</i></a>
+          <button className={style.headset}><i className="material-icons left">volume_off</i></button>
+
 
           </div>
           <div>
           </div>
-        <a className=" btn-large"><i className="material-icons left">settings</i></a>
+          <button className={style.headset}><i className="material-icons left">settings</i></button>
+
      </div>
    </div>
     
@@ -77,7 +86,7 @@ function Layout() {
       <div className={style.btnAdd}>
       <a className="btn-floating btn-large waves-effect waves-light green modal-trigger" href='#modal1'  onClick={modal} ><i className="material-icons">add</i></a>
       
-      <ModalWindow/>
+      <ModalWindow funcHandler={findUser}/>
       </div>
     </div>
 
