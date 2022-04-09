@@ -2,7 +2,7 @@ export const initState = {
   rooms: [],
   friend: [],
   user: null,
-  loader: false,
+  loader: false
 };
 
 const getInitState = () => {
