@@ -1,0 +1,58 @@
+.bars {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.left {
+  width: 18.5vw;
+  height: 100vh;
+  background-color: rgb(48, 51, 51, 0.7);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right {
+  width: 5vw;
+  height: 100vh;
+  background-color: rgb(48, 51, 51, 0.7);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+
+.btnAdd {
+  margin-top: 30px;
+}
+
+.logo {
+display: flex;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  
+}
+
+.btnBlock {
+  display: flex;
+
+}
+.menu {
+  display: flex;
+}
+
+.headset {
+  width: 6.15vw;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
