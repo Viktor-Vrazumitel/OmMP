@@ -10,6 +10,7 @@ body = document.querySelector("#mBox");
 
 num = 32;
 
+
 array = new Uint8Array(num * 2);
 
 width = 10;
