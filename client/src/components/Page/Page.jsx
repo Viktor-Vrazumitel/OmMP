@@ -1,5 +1,6 @@
 
 import Room from '../Room/Room';
+import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css'
 
 
@@ -18,16 +19,8 @@ function MainPage() {
 
 
       <div className={style.rooms}>
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
+        <RoomList/>
+        
       </div>
 
 

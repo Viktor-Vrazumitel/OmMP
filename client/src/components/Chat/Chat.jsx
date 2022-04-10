@@ -1,4 +1,6 @@
+import style from './Chat.module.css'
 import { useState, useRef } from "react";
+import AudioStream from '../AudioStream/AudioStream';
 
 function ChatWindow() {
   const [messages, setMessage] = useState([]);
@@ -43,8 +45,8 @@ function ChatWindow() {
 
   if (!connected) {
     return (
-      <div className="center">
-        <div className="form">
+      <div className={style.center}>
+        <div className={style.form}>
           <input
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -53,35 +55,37 @@ function ChatWindow() {
           />
           <button onClick={connect}>Войти</button>
         </div>
+        <AudioStream />
       </div>
     );
   }
 
   return (
-    <div className="center">
+    <div className={style.center}>
       <div>
-        <div className="form">
+       
+        <div className={style.messages}>
+          {messages.map((mess) => (
+            <div key={mess.id}>
+              {mess.event === "connection" ? (
+                <div className={style.connection_message}>
+                  Пользователь {mess.username} подключился
+                </div>
+              ) : (
+                <div className={style.messages}>
+                  {mess.username}. {mess.message}
+                </div>
+              )}
+            </div>
+          )).reverse()}
+        </div>
+        <div className={style.form}>
           <input
             value={value}
             onChange={(e) => setValue(e.target.value)}
             type="text"
           />
-          <button onClick={sendMessage}>Отправить</button>
-        </div>
-        <div className="messages">
-          {messages.map((mess) => (
-            <div key={mess.id}>
-              {mess.event === "connection" ? (
-                <div className="connection_message">
-                  Пользователь {mess.username} подключился
-                </div>
-              ) : (
-                <div className="message">
-                  {mess.username}. {mess.message}
-                </div>
-              )}
-            </div>
-          ))}
+          <button className={style.sendBtn} onClick={sendMessage}>Отправить</button>
         </div>
       </div>
     </div>
@@ -89,3 +93,4 @@ function ChatWindow() {
 }
 
 export default ChatWindow;
+

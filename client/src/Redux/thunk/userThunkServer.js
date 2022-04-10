@@ -1,6 +1,8 @@
 import axios from 'axios'
-import { addFriendAction } from '../actions/userAction'
 import { URL_BASE } from '../../config'
+import { addRoom, createRoomAction } from '../actions/roomAction'
+import { addFriendAction } from '../actions/userAction'
+
 
 export const findBaseUser = (login) => (dispatch) =>{
 axios.post(`${URL_BASE}/search`, {login})
@@ -8,8 +10,16 @@ axios.post(`${URL_BASE}/search`, {login})
 }
 
 
-export const createBaseRoom =(title) =>(dispatch)=>{
-    axios.post(`${URL_BASE}/room/:id`, {title})
-    .then(res=> dispatch(addFriendAction(res.data)))
+export const createBaseRoom =(title,user_id) =>(dispatch)=>{
+   
+    axios.post(`${URL_BASE}/room`, {title,user_id})
+    .then(res=> dispatch(createRoomAction(res.data)))
 }
+
+
+export const allBaseRoom = ()=>(dispatch)=>{
+    axios.get(`${URL_BASE}/room`)
+.then(res=> dispatch(addRoom(res.data)))
+}
+
 

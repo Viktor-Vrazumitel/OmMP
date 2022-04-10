@@ -4,9 +4,10 @@ import style from './AudioStream.module.css'
 
 function AudioStream() {
 
-  let body, num, array, width, context, logo, myElements, analyser, src, height;
+  let body, num, array, width, context, logo, myElements, analyser, src, height, gobtn;
 
-body = document.querySelector("#mBox");
+body = document.querySelector("#newid");  
+// gobtn = document.querySelector('#btn444');
 
 num = 32;
 
@@ -14,10 +15,13 @@ array = new Uint8Array(num * 2);
 
 width = 10;
 
+
+
 window.onclick = function () {
   if (context) return;
 
-  body.querySelector("#click123").remove();
+  body.querySelector("h1").remove();
+  // gobtn.querySelector('#btn444').remove();
 
   for (let i = 0; i < num; i++) {
     logo = document.createElement("div");
@@ -69,9 +73,10 @@ function loop() {
 
 
 return ( 
-    <div id='mBox' className={style.musicBox}>
+    <div id='newid' className={style.musicBox}>
 
-      <h1 id='click123'>Click</h1>
+      <h1>Click</h1>
+      {/* <button id='btn444'>giStream</button> */}
     </div>
    );
 }

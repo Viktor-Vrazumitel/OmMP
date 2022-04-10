@@ -7,7 +7,7 @@ export const roomReducer = (state = initState, action)=>{
 
     switch (type) {
         case ADD_ROOM:
-           return [...state, payload]
+           return payload
     
         default:
             return state;

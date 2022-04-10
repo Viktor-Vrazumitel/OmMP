@@ -23,20 +23,20 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use(express.json());
-// app.use(
-//   session({
-//     name: app.get('cookieName'),
-//     secret: COOKIE_SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//     store: new FileStore(),
-//     cookie: {
-//       secure: false,
-//       httpOnly: true,
-//       maxAge: 1e3 * 86400, // COOKIE'S LIFETIME — 1 DAY
-//     },
-//   }),
-// );
+app.use(
+  session({
+    name: app.get('cookieName'),
+    secret: COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: new FileStore(),
+    cookie: {
+      secure: false,
+      httpOnly: true,
+      maxAge: 1e3 * 86400, // COOKIE'S LIFETIME — 1 DAY
+    },
+  }),
+);
 
 // APP'S ROUTES
 app.use('/auth', authRouter);
@@ -55,13 +55,20 @@ app.post("/search", async (req, res) => {
   res.json(user);
 });
 
+app.get("/room", async (req, res) => {
+   
+    const rooms = await Room.findAll();
+    
+      res.json(rooms);
+    });
 
 app.post("/room", async (req, res) => {
-  const  {title}  = req.body
-  const user = await Room.findOne({ where: { title } });
-  console.log(user)
-    
-    res.json(user);
+  const  {title,user_id}  = req.body
+
+  
+  const room = await Room.create({ title,user_id } );
+  console.log(room)
+    res.json(room);
   });
 
 

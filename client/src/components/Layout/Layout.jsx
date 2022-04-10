@@ -9,13 +9,14 @@ import { Route, Routes } from 'react-router-dom';
 import Signin from '../Signin/Signin';
 import { useDispatch } from 'react-redux';
 import { findBaseUser } from '../../Redux/thunk/userThunkServer';
-
 import MyRoom from '../MyRoom/MyRoom';
-import socket from '../../clientSocketIO/clientSocketIO';
-
-
+import SignIn from '../Forms/SignIn/SignIn';
+import SignUp from '../Forms/SignUp/SignUp'
+import SignOut from '../Forms/SignOut/SignOut';
+import PrivateRoute from '../PrivateRouter/PrivateRouter';
 function modal(){
   const elems = document.querySelectorAll('.modal');
+  console.log(elems);
   const instances = M.Modal.init(elems);
 }
 
@@ -65,10 +66,13 @@ function Layout() {
     
 
     <Routes>
+       <Route path="/auth/signin" element={<SignIn />} />
+       <Route path="/auth/signup" element={<SignUp />} />
        <Route path='/signin' element={<Signin />}/>
        <Route path='/' element={<MainPage />}/>
-       <Route path='/room/:id' element={<MyRoom />}/>  
-       {/* нужно сделать через квери селектор адреса комнат. что были id */}
+       <Route path='/room' element={<MyRoom />}/>
+       <Route path="/auth/signout" element={<PrivateRoute><SignOut /></PrivateRoute>} />
+
 
      </Routes>
 

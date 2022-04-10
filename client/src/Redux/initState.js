@@ -1,8 +1,9 @@
 export const initState = {
+  userRoom: [],
   rooms: [],
-  friend: [],
+  myFriend: [],
   user: null,
-  loader: false,
+  loader: false
 };
 
 const getInitState = () => {
