@@ -20,7 +20,7 @@ function Menu() {
 
 
   const [stat, setStat] = useState(false);
-  const nameRoom = useSelector(state=>state.userRoom)
+  const userRoom = useSelector(state=>state.userRoom)
 
 
   
@@ -30,7 +30,7 @@ function Menu() {
   return (
     <>
       <div className={style.menu}>
-        {nameRoom ? <button >{nameRoom[0].title}</button> : <button type='button' data-target="modal2" className="btn modal-trigger" >create room</button>}
+        {userRoom  ? <button >{userRoom.title}</button> : <button type='button' data-target="modal2" className="btn modal-trigger" >create room</button>}
        <ModalTest  setStat={setStat}/>
        
       </div>

@@ -1,7 +1,8 @@
 import { ADD_FRIEND, DELETE_FRIEND_OUT, DELETE_USER, SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
-import { addRoom } from "./roomAction";
+import { addRoom, outUserRoomAction } from "./userRoomAction";
+import { inUserBaseRoom } from "../thunk/userThunkServer";
 
 
 export const addFriendAction = (user) =>{
@@ -30,7 +31,7 @@ export const getUserFromServer = (id) => async (dispatch) => {
   if (response.status === 200) {
     const currentUser = await response.json();
     dispatch(setUser(currentUser));
-    dispatch(addRoom)
+    // dispatch(addRoom)
   }
   dispatch(disableLoader());
 };
@@ -48,6 +49,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
   if (response.status === 200) {
     const user = await response.json();
     dispatch(setUser(user));
+    
     navigate('/');
   } else {
     navigate('/signup');
@@ -68,6 +70,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
   if (response.status === 200) {
     const user = await response.json();
     dispatch(setUser(user));
+    dispatch(inUserBaseRoom(user))
     navigate(from);
   } else {
     navigate('/auth/signin');
@@ -86,6 +89,7 @@ export const signOut = () => async (dispatch) => {
   if (response.status === 200) {
     dispatch(deleteUser());
     dispatch(deleteListFriendSingout())
+    dispatch(outUserRoomAction())
   }
 };
 

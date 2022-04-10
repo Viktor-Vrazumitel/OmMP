@@ -11,7 +11,7 @@ function ModalTest({funcHandler,setStat}) {
   
   const user = useSelector(state => state.user)
   
-  function createRoomHandler(input) {
+   function createRoomHandler(input) {
     dispatch(createBaseRoom(input,user.id))
     setStat(prev=> !prev)
   }
