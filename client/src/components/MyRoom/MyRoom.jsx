@@ -8,7 +8,7 @@ function MyRoom() {
   return ( 
     <div className={style.main}>
       <div className={style.pic}>
-        {/* <AudioStream /> */}
+        <AudioStream />
       </div>
       <div className={style.chat}>
         <ChatWindow />

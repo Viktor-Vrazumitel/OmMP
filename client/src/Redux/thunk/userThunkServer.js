@@ -9,7 +9,7 @@ axios.post(`${URL_BASE}/search`, {login})
 
 
 export const createBaseRoom =(title) =>(dispatch)=>{
-    axios.post(`${URL_BASE}/room`, {title})
+    axios.post(`${URL_BASE}/room/:id`, {title})
     .then(res=> dispatch(addFriendAction(res.data)))
 }
 

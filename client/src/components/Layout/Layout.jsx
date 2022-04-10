@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { findBaseUser } from '../../Redux/thunk/userThunkServer';
 
 import MyRoom from '../MyRoom/MyRoom';
-
+import socket from '../../clientSocketIO/clientSocketIO';
 
 
 function modal(){
@@ -67,8 +67,8 @@ function Layout() {
     <Routes>
        <Route path='/signin' element={<Signin />}/>
        <Route path='/' element={<MainPage />}/>
-       <Route path='/room' element={<MyRoom />}/>
-
+       <Route path='/room/:id' element={<MyRoom />}/>  
+       {/* нужно сделать через квери селектор адреса комнат. что были id */}
 
      </Routes>
 

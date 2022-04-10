@@ -14,7 +14,7 @@ function MainPage() {
       </div>
 
 
-      <button type="button" class={`btn btn-lg btn-success ${style.btn}`}>Войти</button>
+      <button type="button" className={`btn btn-lg btn-success ${style.btn}`}>Войти</button>
 
 
       <div className={style.rooms}>
