@@ -1,86 +1,73 @@
-import style from './AudioStream.module.css'
-
-
+import style from "./AudioStream.module.css";
 
 function AudioStream() {
+  let body, num, array, width, context, logo, myElements, analyser, src, height;
 
-  let body, num, array, width, context, logo, myElements, analyser, src, height, gobtn;
+  num = 32;
+  array = new Uint8Array(num * 2);
+  width = 10;
 
-body = document.querySelector("#newid");  
-// gobtn = document.querySelector('#btn444');
+  function goStream() {
+    if (context) return;
+    body = document.querySelector("#newid");
 
-num = 32;
+    body.querySelector("#btn44").remove();
 
-array = new Uint8Array(num * 2);
+    for (let i = 0; i < num; i++) {
+      logo = document.createElement("div");
+      logo.className = "logo";
+      logo.style.background = "red";
+      logo.style.minWidth = width + "px";
+      body.appendChild(logo);
+    }
 
-width = 10;
+    myElements = document.getElementsByClassName("logo");
+    context = new AudioContext();
+    analyser = context.createAnalyser();
 
+    let displayMediaOptions = {
+      video: {
+        cursor: "always",
+      },
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        sampleRate: 44100,
+      },
+    };
 
+    navigator.mediaDevices
+      .getDisplayMedia(displayMediaOptions)
+      .then((stream) => {
+        // console.log(stream, stream.getAudioTracks());
+        src = context.createMediaStreamSource(stream);
+        console.log(stream);
+        src.connect(analyser);
+        loop();
+      })
+      .catch((error) => {
+        alert(error + "\r\n Отклонено. Страница будет не обновлена!");
+      });
 
-window.onclick = function () {
-  if (context) return;
-
-  body.querySelector("h1").remove();
-  // gobtn.querySelector('#btn444').remove();
-
-  for (let i = 0; i < num; i++) {
-    logo = document.createElement("div");
-    logo.className = "logo";
-    logo.style.background = "red";
-    logo.style.minWidth = width + "px";
-    body.appendChild(logo);
+    function loop() {
+      window.requestAnimationFrame(loop);
+      analyser.getByteFrequencyData(array);
+      for (let i = 0; i < num; i++) {
+        height = array[i + num];
+        myElements[i].style.minHeight = height + "px";
+        myElements[i].style.opacity = 0.008 * height;
+      }
+    }
   }
 
-  myElements = document.getElementsByClassName("logo");
-  context = new AudioContext();
-  analyser = context.createAnalyser();
-
-
-
-  
-  let displayMediaOptions = {
-  video: {
-    cursor: "always"
-  },
-  audio: {
-    echoCancellation: true,
-    noiseSuppression: true,
-    sampleRate: 44100
-  }
-};
-
-navigator.mediaDevices
-.getDisplayMedia(displayMediaOptions)
-.then((stream) => {
-  console.log(stream, stream.getAudioTracks());
-  src = context.createMediaStreamSource(stream);
-  src.connect(analyser);
-  loop();
-})
-.catch((error) => {
-  alert(error + "\r\n Отклонено. Страница будет обновлена!");
-  // location.reload();
-});
-function loop() {
-  window.requestAnimationFrame(loop);
-  analyser.getByteFrequencyData(array);
-  for (let i = 0; i < num; i++) {
-    height = array[i + num];
-    myElements[i].style.minHeight = height + "px";
-    myElements[i].style.opacity = 0.008 * height;
-  }
-}
-};
-
-
-
-return ( 
-    <div id='newid' className={style.musicBox}>
-
-      <h1>Начать эфир</h1>
-      {/* <button id='btn444'>giStream</button> */}
+  return (
+    <div id="newid" className={style.musicBox}>
+      <canvas id="canvas1"></canvas>
+      <button onClick={() => goStream()} id="btn44">
+        giStream
+      </button>
     </div>
-   );
+  );
 }
 
 export default AudioStream;
