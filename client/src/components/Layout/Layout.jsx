@@ -49,8 +49,10 @@ dispatch(createBaseRoom(input,userIn))
     <div className={style.bars}>
       <div className={style.left}>
 
+
         <div className={style.logo}>
           <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
+
         
 
 

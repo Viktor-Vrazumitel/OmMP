@@ -3,7 +3,7 @@ import { CREATE_ROOM, IN_USER_ROOM, OUT_USER_ROOM } from "../type/type";
 
 export const userRoomReducer = (state = initState, action) => {
   const { type, payload } = action;
-console.log('userRoom' , payload);
+// console.log('userRoom' , payload);
   switch (type) {
     case CREATE_ROOM:
       return [payload]
