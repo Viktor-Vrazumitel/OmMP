@@ -1,21 +1,24 @@
 .main {
-  width: 77vw;
+  background-color: rgb(27, 28, 34);
+  background-size: cover;
+  width: 77.5vw;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  border-left: solid rgb(51, 52, 58);
 }
 
 .pic {
-  border: 1px red solid;
   width: 38.3vw;
-  height: 90vh;
+  height: 30vh;
 }
 
 .chat {
-  border: 1px red solid;
-  width: 38.3vw;
-  height: 90vh;
-}
+  margin-top: 14.8%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column-reverse;
+} 
 
 .input {
   width: 76.6vw;

@@ -1,6 +1,32 @@
 .input {
-  width: 16vw;
-  border: 1px solid;
-  margin-left: 7%;
-  border-radius: 22px;
+  width: 18vw;
+  margin-left: 8%;
+  display: flex;
+  color: rgb(110, 111, 115) !important;
+}
+
+.inputText {
+  color:  white;
+  border: none !important;
+  font-size: 22px !important;
+}
+
+
+input.inputText::-webkit-input-placeholder { color: rgb(110, 111, 115); }
+
+.inputText:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.searchIcon {
+  font-size: 32px;
 }

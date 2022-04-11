@@ -1,13 +1,14 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import Friend from '../UI/FriendIcon/FriendIcon'
 
 function FriendList() {
-    const friends = useSelector(state=> state.friend)
+    const friends = useSelector(state=> state.myFriend)
+
+
 
     return (
         <div>
-{friends.map(el => <Friend key={el.id} name={el.login}/>)}
+{friends && friends.map(el => <Friend key={el.id} name={el.login}/>)}
         </div>
     )
 }

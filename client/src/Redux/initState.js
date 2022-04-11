@@ -1,13 +1,15 @@
 export const initState = {
+  userRoom: [],
   rooms: [],
-  friend: [],
+  myFriend: [],
   user: null,
-  loader: false,
+  loader: false
 };
 
 const getInitState = () => {
   const stateFromLS = JSON.parse(window.localStorage.getItem('redux'));
   return stateFromLS || initState;
-};
 
+};
+//  
 export default getInitState;
