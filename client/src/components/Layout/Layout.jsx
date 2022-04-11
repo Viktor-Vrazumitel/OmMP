@@ -46,14 +46,14 @@ function inHomeHandler(){
 }
 
 
-  const navigate = useNavigate()
+
    
 
   return ( 
 <div className={style.bars}>
       
-
       <div className={style.left}>
+
         <div>
         <logo />
         </div>
@@ -93,6 +93,7 @@ function inHomeHandler(){
       </div>
     
 
+    </div>
     <Routes>
        <Route path="/auth/signin" element={<SignIn />} />
        <Route path="/auth/signup" element={<SignUp />} />
@@ -117,8 +118,7 @@ function inHomeHandler(){
     </div>
 
 
-    </div>
-
+</div>
     
    );
 }
