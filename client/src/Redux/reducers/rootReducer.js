@@ -8,8 +8,8 @@ import { userRoomReducer } from "./userRoomReducer";
 
 export const rootReducer = combineReducers({
     rooms: roomReducer,
-    userRoom: userRoomReducer,
     myFriend: friendReducer,
+    userRoom: userRoomReducer,
     user: createUserReducer,
     loader: loaderReducer,
 })

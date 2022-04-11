@@ -5,20 +5,23 @@ import ModalWindow from '../UI/ModalWindow/ModalWindow';
 import style from './Layout.module.css'
 import M from 'materialize-css';
 import FriendList from '../FriendList/FriendList';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Signin from '../Signin/Signin';
 import { useDispatch } from 'react-redux';
-import { findBaseUser } from '../../Redux/thunk/userThunkServer';
+
 import MyRoom from '../MyRoom/MyRoom';
 import SignIn from '../Forms/SignIn/SignIn';
 import SignUp from '../Forms/SignUp/SignUp'
 import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
+import { findBaseUser } from '../../Redux/thunk/friendThunk';
 function modal(){
   const elems = document.querySelectorAll('.modal');
   console.log(elems);
   const instances = M.Modal.init(elems);
 }
+
+
 
 function Layout() {
   M.AutoInit();
@@ -27,9 +30,14 @@ function Layout() {
 
   function findUser(input) {
     dispatch(findBaseUser(input))
+    console.log('layout');
   }
 
-  
+  const navigate = useNavigate()
+
+function inHomeHandler(){
+  navigate('/')
+}
 
   
   
@@ -39,7 +47,7 @@ function Layout() {
     <div className={style.bars}>
       
     <div className={style.left}>
-     <div className={style.logo}>
+     <div className={style.logo} onClick={inHomeHandler}>
        Logo
      </div>
     <div>
