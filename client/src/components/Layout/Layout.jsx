@@ -11,7 +11,7 @@ import SignUp from "../Forms/SignUp/SignUp";
 import SignOut from "../Forms/SignOut/SignOut";
 import PrivateRoute from "../PrivateRouter/PrivateRouter";
 import { findBaseUser } from "../../Redux/thunk/friendThunk";
-
+import logo from '../../img/logo/logo.svg'
 function modal() {
   const elems = document.querySelectorAll(".modal");
   // const instances = M.Modal.init(elems);
@@ -37,14 +37,8 @@ const myRoom = useSelector(state=> state.userRoom)
   return (
     <div className={style.bars}>
       <div className={style.left}>
-
-    
         <div className={style.logo}>
-           <span onClick={()=>navigate('/')}>OmMP</span>
-           
-
-        <div>
-          <logo />
+        <img className={style.newLogo} src={logo} alt="" />
         </div>
         {/* <div className={style.logo}> */}
         {/* <span onClick={()=>navigate('/')}>OmMP</span>
