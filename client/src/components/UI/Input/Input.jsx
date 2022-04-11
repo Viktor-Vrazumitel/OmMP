@@ -14,7 +14,7 @@ const valueHandler=(e)=>{
     <div className={style.input}>
 
       <div className={style.search}>
-        <span class={`material-icons ${style.searchIcon}`}>search</span>
+        <span className={`material-icons ${style.searchIcon}`}>search</span>
       </div>
 
       <input 
