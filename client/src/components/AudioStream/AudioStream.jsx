@@ -1,7 +1,6 @@
 import style from "./AudioStream.module.css";
 
 function AudioStream() {
-
   let body, num, array, width, context, logo, myElements, analyser, src, height;
 
   num = 32;

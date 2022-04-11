@@ -46,12 +46,10 @@ dispatch(createBaseRoom(input,userIn))
   return (
     <div className={style.bars}>
       <div className={style.left}>
+        
         <div className={style.logo}>
-        <img className={style.newLogo} src={logo} alt="" />
-        </div>
-        {/* <div className={style.logo}> */}
-        {/* <span onClick={()=>navigate('/')}>OmMP</span>
-         */}
+        <span onClick={()=>navigate('/')}>OmMP</span>
+        
 
 
         </div>
