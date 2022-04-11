@@ -53,14 +53,12 @@ function inHomeHandler(){
       
 
       <div className={style.left}>
-        <div>
-          <logo />
-        </div>
-        {/* <div className={style.logo}> */}
-           {/* <span onClick={()=>navigate('/')}>OmMP</span>
-            */}
+    
+        <div className={style.logo}>
+           <span onClick={()=>navigate('/')}>OmMP</span>
+           
 
-        {/* </div> */}
+        </div>
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoom}`}>cast Мои комнаты</span>
@@ -100,9 +98,7 @@ function inHomeHandler(){
        <Route path='/' element={<MainPage />}/>
        <Route path='/room' element={<MyRoom />}/>
        <Route path="/auth/signout" element={<PrivateRoute><SignOut /></PrivateRoute>} />
-
-
-     </Routes>
+    </Routes>
 
 
     <div className={style.right}>

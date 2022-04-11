@@ -132,9 +132,8 @@
   color: rgb(110, 111, 115);
   font-size: 22px;
   border: 2px solid rgb(110, 111, 115);
-  
-
 }
+
 .addFriend:hover {
  border: 2px solid rgb(8, 200, 40);
  border-radius: 50%;
@@ -151,6 +150,7 @@
   width: 14vw;
   height: 3.5vh;
   background-color: rgb(35, 36, 42);
+  
 }
 
 
