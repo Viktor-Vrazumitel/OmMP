@@ -9,7 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import Room from '../Room/Room';
 import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css';
-
+import drum from '../../img/music/drum.webp'
+import dj from '../../img/music/dj.webp'
+import plastinka from '../../img/music/plastinka.webp'
+import synt from '../../img/music/synt.webp'
 
 
 
@@ -54,10 +57,10 @@ navigate('/signin')
             <span className={style.title}>Жанры</span> 
           </div>
             <div className={style.janrBox}>
-              <div className={style.janr}>1</div>
-              <div className={style.janr}>2</div>
-              <div className={style.janr}>3</div>
-              <div className={style.janr}>4</div>
+              <img className={style.janr} src={drum} alt="" />
+              <img className={style.janr} src={dj} alt="" />
+              <img className={style.janr} src={plastinka} alt="" />
+              <img className={style.janr} src={synt} alt="" />
             </div>
         </div>
 
