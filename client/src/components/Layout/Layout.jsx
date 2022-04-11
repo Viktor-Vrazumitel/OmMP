@@ -21,7 +21,8 @@ function Layout() {
   M.AutoInit();
   const dispatch = useDispatch();
   const userIn = useSelector((state) => state.user);
-const myRoom = useSelector(state=> state.useRoom)
+const myRoom = useSelector(state=> state.userRoom)
+
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
     console.log("layout");
@@ -43,15 +44,17 @@ const myRoom = useSelector(state=> state.useRoom)
         {/* <span onClick={()=>navigate('/')}>OmMP</span>
          */}
 
-        {/* </div> */}
+
+        </div>
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoom}`}>
-            cast Мои комнаты
+            cast Моя комната
           </span>
-          <div className={style.fakeRoom}>1</div>
-          <div className={style.fakeRoom}>2</div>
-          <div className={style.fakeRoom}>3</div>
+          {myRoom && <div className={style.fakeRoom} key={myRoom.id}>{myRoom.title}</div> }
+          <div className={style.fakeRoom}></div>
+          <div className={style.fakeRoom}></div>
+          <div className={style.fakeRoom}></div>
         </div>
 
         <div className={style.myFavorite}>
