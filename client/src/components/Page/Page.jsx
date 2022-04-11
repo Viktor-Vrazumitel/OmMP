@@ -13,6 +13,7 @@ import drum from '../../img/music/drum.webp'
 import dj from '../../img/music/dj.webp'
 import plastinka from '../../img/music/plastinka.webp'
 import synt from '../../img/music/synt.webp'
+import Popular from '../Popular/Popular';
 
 
 
@@ -44,11 +45,7 @@ navigate('/signin')
              <span className={style.title}>Популярное</span> 
           </div>
             <div className={style.popBox}>
-              <div className={style.pop}>1</div>
-              <div className={style.pop}>2</div>
-              <div className={style.pop}>3</div>
-              <div className={style.pop}>4</div>
-              <div className={style.pop}>5</div>
+                <Popular />
             </div>
         </div>
 
