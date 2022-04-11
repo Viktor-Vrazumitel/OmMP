@@ -8,7 +8,7 @@ function FriendList() {
 
     return (
         <div>
-{friends?.map(el => <Friend key={el.id} name={el.login}/>)}
+{/* {friends?.map(el => <Friend key={el.id} name={el.login}/>)} */}
         </div>
     )
 }

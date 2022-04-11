@@ -15,6 +15,7 @@ import SignUp from '../Forms/SignUp/SignUp'
 import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
 
+import logo from '../../img/logo/logo.svg'
 
 
 import { findBaseUser } from '../../Redux/thunk/friendThunk';
@@ -44,17 +45,13 @@ function inHomeHandler(){
   navigate('/')
 }
 
-
-
-   
-
   return ( 
     <div className={style.bars}>
       
 
       <div className={style.left}>
-        <div>
-          <logo />
+        <div className={style.logo}>
+        <img className={style.newLogo} src={logo} alt="" />
         </div>
         {/* <div className={style.logo}> */}
            {/* <span onClick={()=>navigate('/')}>OmMP</span>
