@@ -6,7 +6,9 @@ function Friend({name}) {
 
   return ( 
 <div className={style.icon}>
- {name}
+  <div className={style.name}>
+    {name}
+  </div>
 </div>
    );
 }

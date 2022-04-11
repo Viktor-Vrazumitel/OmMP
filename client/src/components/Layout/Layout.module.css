@@ -30,7 +30,7 @@
 }
 
 .logo {
-
+  cursor: pointer;
   margin-left: 10%;
   margin-top: 8%;
   font-family: sans-serif;
