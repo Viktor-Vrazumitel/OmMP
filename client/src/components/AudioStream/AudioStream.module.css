@@ -9,8 +9,7 @@
   overflow: hidden;
 }
 
-
-h1 {
+.streamBtn {
   text-decoration: none;
   text-shadow:
     -2px 4px 4px #091243, 
@@ -33,3 +32,15 @@ h1 {
   font-style: italic;
   padding: 16px;
 }
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(3px) contrast(10) */
+  /* filter: contrast(10); */
+  /* filter: blur(1px); */
+}
+/* размытие и контраст на 20 строке */
