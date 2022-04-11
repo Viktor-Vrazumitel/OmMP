@@ -11,57 +11,66 @@ import SignUp from "../Forms/SignUp/SignUp";
 import SignOut from "../Forms/SignOut/SignOut";
 import PrivateRoute from "../PrivateRouter/PrivateRouter";
 import { findBaseUser } from "../../Redux/thunk/friendThunk";
-import ModalTest from "../UI/ModalTest/ModalTest";
-import { createBaseRoom } from "../../Redux/thunk/userThunkServer";
+import {
+  allBaseRoom,
+  createBaseRoom,
+  upDateBaseRoom,
+} from "../../Redux/thunk/userThunkServer";
 import DivNewRoom from "../divNewRoom/divNewRoom";
+import CreateRoom from "../CreateRoom/CreateRoom";
+import { upDateRoom } from "../../Redux/actions/roomAction";
+import { useEffect } from "react";
+import { createRoomAction } from "../../Redux/actions/userRoomAction";
+import DivNewRoomList from "../divNewRoomList/divNewRoomList";
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
-  console.log('click');
-  const instances = M.Modal.init(elems);
 
+  const instances = M.Modal.init(elems);
 }
 
 function Layout() {
   M.AutoInit();
   const dispatch = useDispatch();
   const userIn = useSelector((state) => state.user);
-const myRoom = useSelector(state=> state.userRoom)
+  const myRoom = useSelector((state) => state.rooms);
+  const usRoom = useSelector((state) => state.userRoom);
 
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
-    console.log("layout");
   }
 
   const navigate = useNavigate();
 
-  function inHomeHandler() {
-    navigate("/room");
-  }
+  
 
-  function createRoomHandler(input, userIn){
-dispatch(createBaseRoom(input,userIn))
+  function createRoomHandler(input, userIn) {
+    dispatch(createBaseRoom(input, userIn));
+    // dispatch(createRoomAction(myRoom,userIn))
   }
 
   return (
     <div className={style.bars}>
       <div className={style.left}>
         <div className={style.logo}>
-        <img className={style.newLogo} src={logo} alt="" />
-        </div>
-        {/* <div className={style.logo}> */}
-        {/* <span onClick={()=>navigate('/')}>OmMP</span>
-         */}
-
-
+          <span onClick={() => navigate("/")}>OmMP</span>
         </div>
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoom}`}>
             cast Моя комната
           </span>
-          {myRoom && <DivNewRoom key={myRoom[0].id} onClick={inHomeHandler} title={myRoom[0].title}/> }
-          
+          <DivNewRoomList/>
+          {/* {!usRoom.length ? (
+            <DivNewRoom
+              key={myRoom[0]?.id}
+              onClick={inHomeHandler}
+              title={myRoom[0]?.title}
+            />
+          ) : (
+            <></>
+          )} */}
+
           <div className={style.fakeRoom}></div>
           <div className={style.fakeRoom}></div>
         </div>
@@ -77,16 +86,16 @@ dispatch(createBaseRoom(input,userIn))
           <div className={style.fakeRoom}>5</div>
         </div>
 
-         <div className={style.createRoom}>
-          {myRoom ? <></> : <><span
-            className={`modal-trigger material-icons ${style.fontRoom}`}
-            href="#modal2"
-            onClick={()=>modal('#modal2')}
-          >
-            add_circle_outline Создать комнату
-          </span>
-
-          <ModalTest funcHandler={createRoomHandler} userIn={userIn?.id} /></>}
+        <div className={style.createRoom}>
+          {userIn  ? (
+            <CreateRoom
+              modal={modal}
+              createRoomHandler={createRoomHandler}
+              userIn={userIn}
+            />
+          ) : (
+            <></>
+          )}
         </div>
 
         <div>
@@ -118,15 +127,20 @@ dispatch(createBaseRoom(input,userIn))
         <FriendList />
 
         <div className={style.btnAdd}>
-          <span
-            className={`modal-trigger ${style.addFriend}`}
-            href="#modal1"
-            onClick={()=>modal('#modal1')}
-          >
-            <i className={`material-icons ${style.addIcon}`}>add</i>
-          </span>
-
-          <ModalWindow funcHandler={findUser} />
+          {userIn ? (
+            <>
+              <span
+                className={`modal-trigger ${style.addFriend}`}
+                href="#modal1"
+                onClick={() => modal("#modal1")}
+              >
+                <i className={`material-icons ${style.addIcon}`}>add</i>
+              </span>
+              <ModalWindow funcHandler={findUser} />{" "}
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

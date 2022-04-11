@@ -12,7 +12,7 @@ useEffect(()=>{
 },[dispatch])
     return (
         <>
-        {rooms&&rooms.map(room => <Room key={room.id} title={room.title} id={room.id}/>)}
+        {rooms && rooms.map(room => <Room key={room.id} title={room.title} id={room.id}/>)}
         </>
     )
 }

@@ -1,9 +1,9 @@
 import { CREATE_ROOM, IN_USER_ROOM, OUT_USER_ROOM } from "../type/type";
 
-export const createRoomAction = (room) => {
+export const createRoomAction = (room,id) => {
     return {
       type: CREATE_ROOM,
-      payload: room,
+      payload: [room,id]
     };
   };
   

@@ -3,13 +3,18 @@ import { CREATE_ROOM, IN_USER_ROOM, OUT_USER_ROOM } from "../type/type";
 
 export const userRoomReducer = (state = initState, action) => {
   const { type, payload } = action;
-console.log('userRoom' , payload);
+
   switch (type) {
     case CREATE_ROOM:
-      return [payload]
+      const [room, user] = payload;
+      console.log(room);
+      return room.filter((el) => el.user_id === user.id);
     case OUT_USER_ROOM:
-      return null
-      case IN_USER_ROOM:
+      return [];
+    case IN_USER_ROOM:
+      if (payload === null) {
+        return [];
+      }
       return [payload]
 
     default:

@@ -13,7 +13,7 @@ const user = useSelector(state => state.user)
   return ( 
     
     <div className={style.navLink}>
-      <MyInput />
+      <MyInput holder='Найти комнату'/>
       <div className={style.blockLink}>
         {user ? <span className={style.linkOut} onClick={()=>navigate('/auth/signout')}>Выход</span> : <><span className={style.link} onClick={()=>navigate('/auth/signUp')}>Регистрация</span>
         <span className={style.linkIn} onClick={()=>navigate('/auth/signin')}>Вход</span></> }
