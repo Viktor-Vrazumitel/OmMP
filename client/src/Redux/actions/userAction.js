@@ -1,17 +1,12 @@
-import { ADD_FRIEND, DELETE_FRIEND_OUT, DELETE_USER, SET_USER} from "../type/type"
+import {  DELETE_FRIEND_OUT, DELETE_USER, FIND_FRIEND, SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
-import { addRoom, outUserRoomAction } from "./userRoomAction";
-import { inUserBaseRoom } from "../thunk/userThunkServer";
+import {  outUserRoomAction } from "./userRoomAction";
+import {  inUserBaseRoom } from "../thunk/userThunkServer";
+import { deleteUser } from "./freindAction";
 
 
-export const addFriendAction = (user) =>{
-    
-    return{
-        type: ADD_FRIEND,
-        payload: user
-    }
-}
+
 
 export const deleteListFriendSingout =()=>{
   return{
@@ -23,6 +18,8 @@ export const setUser = (user) => ({
   payload: user,
 });
 
+
+
 export const getUserFromServer = (id) => async (dispatch) => {
   dispatch(enableLoader());
   const response = await fetch(endPoints.getUser(id), {
@@ -31,7 +28,7 @@ export const getUserFromServer = (id) => async (dispatch) => {
   if (response.status === 200) {
     const currentUser = await response.json();
     dispatch(setUser(currentUser));
-    // dispatch(addRoom)
+   
   }
   dispatch(disableLoader());
 };
@@ -71,6 +68,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
     const user = await response.json();
     dispatch(setUser(user));
     dispatch(inUserBaseRoom(user))
+    // dispatch(findBaseFriendUser(user))
     navigate(from);
   } else {
     navigate('/auth/signin');
@@ -78,9 +76,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
   dispatch(disableLoader());
 };
 
-export const deleteUser = () => ({
-  type: DELETE_USER,
-});
+
 
 export const signOut = () => async (dispatch) => {
   const response = await fetch(endPoints.signOut(), {

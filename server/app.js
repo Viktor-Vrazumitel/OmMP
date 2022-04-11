@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const FileStore = require("session-file-store")(session);
 const axios = require("axios");
-const { User, Room } = require("./db/models");
+const { User, Room, Friend } = require("./db/models");
 const authRouter = require("./src/routes/auth.router");
 const usersRouter = require("./src/routes/users.router");
 
@@ -48,39 +48,37 @@ app.get("/", (req, res) => {
 
 app.post("/search", async (req, res) => {
   const { login } = req.body;
-  console.log(req.body);
   const user = await User.findOne({ where: { login } });
-
   res.json(user);
 });
 
 app.get("/room", async (req, res) => {
   const rooms = await Room.findAll();
-
   res.json(rooms);
 });
 
 app.post("/room", async (req, res) => {
   const { title, user_id } = req.body;
-  const rooms = await Room.findOne({where: {title}})
-if(!rooms){
+  const rooms = await Room.findOne({ where: { title } });
+  if (!rooms) {
     const room = await Room.create({ title, user_id });
     return res.json(room);
-}else{
+  } else {
     res.json(Error);
-}
+  }
 
-// const repetRoom = rooms.filter(el=> el.title !== title)
-
-//   console.log(room);
-//   res.json(room);
 });
 
-app.post('/userRoom',async(req,res)=>{
+app.post("/userRoom", async (req, res) => {
+  const userRoom = await Room.findOne({ where: { user_id: req.body.user.id } });
+  res.json(userRoom);
+});
 
-    const userRoom = await Room.findOne({where: {user_id:req.body.user.id}})
-   
-    res.json(userRoom)
-})
+app.post("/friend", async (req, res) => {
+  const friends = await Friend.findAll({
+    where: { user_id: req.body.user.id },
+  });
+  res.json(friends);
+});
 
 app.listen(PORT, () => console.log(`Server vzletel ${PORT}`));

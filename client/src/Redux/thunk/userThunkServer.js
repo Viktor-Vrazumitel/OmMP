@@ -1,14 +1,10 @@
 import axios from 'axios'
 import { URL_BASE } from '../../config'
 import { addRoom} from '../actions/roomAction'
-import { addFriendAction } from '../actions/userAction'
 import { createRoomAction, inUserRoomAction } from '../actions/userRoomAction'
 
 
-export const findBaseUser = (login) => (dispatch) =>{
-axios.post(`${URL_BASE}/search`, {login})
-.then(res=> dispatch(addFriendAction(res.data)))
-}
+
 
 
 export const createBaseRoom =(title,user_id) =>(dispatch)=>{
@@ -28,5 +24,7 @@ export const inUserBaseRoom = (user)=> (dispatch)=>{
     .then(res=>dispatch(inUserRoomAction(res.data) ))
 
 }
+
+
 
 

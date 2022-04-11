@@ -1,6 +1,6 @@
 export const ADD_ROOM = 'ADD_ROOM'
 export const ADD_FRIEND ='ADD_FRIEND'
-export const FIND_FRIEND = 'FIND_FRIEND'
+// export const FIND_FRIEND = 'FIND_FRIEND'
 export const SET_USER = 'SET_USER';
 export const DELETE_USER = 'DELETE_USER';
 export const ENABLE_LOADER = 'ACTIVATE_LOADER';
@@ -9,3 +9,4 @@ export const CREATE_ROOM = 'CREATE_ROOM'
 export const DELETE_FRIEND_OUT = 'DELETE_FRIEND_OUT'
 export const OUT_USER_ROOM = 'OUT_USER_ROOM'
 export const IN_USER_ROOM = 'IN_USER_ROOM'
+export const GET_FRIENDS_USER_BASE = 'GET_FRIENDS_USER_BASE'
