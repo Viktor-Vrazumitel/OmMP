@@ -104,6 +104,7 @@
   display: flex;
   justify-content: center;
   margin-left: 12%;
+  cursor: pointer;
 }
 .createRoom:hover {
  border: 2px solid rgb(74, 81, 246);
@@ -150,7 +151,7 @@
   width: 14vw;
   height: 3.5vh;
   background-color: rgb(35, 36, 42);
-  
+  cursor: pointer;
 }
 
 

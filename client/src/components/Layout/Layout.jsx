@@ -11,10 +11,14 @@ import SignUp from "../Forms/SignUp/SignUp";
 import SignOut from "../Forms/SignOut/SignOut";
 import PrivateRoute from "../PrivateRouter/PrivateRouter";
 import { findBaseUser } from "../../Redux/thunk/friendThunk";
+import ModalTest from "../UI/ModalTest/ModalTest";
+import { createBaseRoom } from "../../Redux/thunk/userThunkServer";
+import DivNewRoom from "../divNewRoom/divNewRoom";
 
-function modal() {
-  const elems = document.querySelectorAll(".modal");
-  // const instances = M.Modal.init(elems);
+function modal(clazz) {
+  const elems = document.querySelector(clazz);
+  console.log('click');
+  const instances = M.Modal.init(elems);
 }
 
 function Layout() {
@@ -31,7 +35,11 @@ const myRoom = useSelector(state=> state.userRoom)
   const navigate = useNavigate();
 
   function inHomeHandler() {
-    navigate("/");
+    navigate("/room");
+  }
+
+  function createRoomHandler(input, userIn){
+dispatch(createBaseRoom(input,userIn))
   }
 
   return (
@@ -57,8 +65,8 @@ const myRoom = useSelector(state=> state.userRoom)
           <span className={`material-icons ${style.fontRoom}`}>
             cast Моя комната
           </span>
-          {myRoom && <div className={style.fakeRoom} key={myRoom.id}>{myRoom.title}</div> }
-          <div className={style.fakeRoom}></div>
+          {myRoom && <DivNewRoom key={myRoom[0].id} onClick={inHomeHandler} title={myRoom[0].title}/> }
+          
           <div className={style.fakeRoom}></div>
           <div className={style.fakeRoom}></div>
         </div>
@@ -74,10 +82,16 @@ const myRoom = useSelector(state=> state.userRoom)
           <div className={style.fakeRoom}>5</div>
         </div>
 
-        <div className={style.createRoom}>
-          <span className={`material-icons ${style.fontRoom}`}>
+         <div className={style.createRoom}>
+          {myRoom ? <></> : <><span
+            className={`modal-trigger material-icons ${style.fontRoom}`}
+            href="#modal2"
+            onClick={()=>modal('#modal2')}
+          >
             add_circle_outline Создать комнату
           </span>
+
+          <ModalTest funcHandler={createRoomHandler} userIn={userIn?.id} /></>}
         </div>
 
         <div>
@@ -112,7 +126,7 @@ const myRoom = useSelector(state=> state.userRoom)
           <span
             className={`modal-trigger ${style.addFriend}`}
             href="#modal1"
-            onClick={modal}
+            onClick={()=>modal('#modal1')}
           >
             <i className={`material-icons ${style.addIcon}`}>add</i>
           </span>
