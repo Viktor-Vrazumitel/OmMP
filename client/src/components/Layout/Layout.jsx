@@ -36,6 +36,12 @@ const myRoom = useSelector(state=> state.useRoom)
   return (
     <div className={style.bars}>
       <div className={style.left}>
+
+    
+        <div className={style.logo}>
+           <span onClick={()=>navigate('/')}>OmMP</span>
+           
+
         <div>
           <logo />
         </div>
@@ -43,7 +49,8 @@ const myRoom = useSelector(state=> state.useRoom)
         {/* <span onClick={()=>navigate('/')}>OmMP</span>
          */}
 
-        {/* </div> */}
+
+        </div>
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoom}`}>
