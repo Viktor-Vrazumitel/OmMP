@@ -36,7 +36,7 @@ navigate('/signin')
         {/* <RoomList/> */}
 
 
-{user ? <></> : <button type="button" className={`btn btn-lg btn-success ${style.btn}`} onClick={singInHandler}>Войти</button> }
+
       
 
 
@@ -81,7 +81,7 @@ navigate('/signin')
       </div>
 
 
-      {/* <button type="button" className={`btn btn-lg btn-success ${style.btn}`}>Войти</button> */}
+
 
 
     
