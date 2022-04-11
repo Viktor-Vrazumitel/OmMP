@@ -7,7 +7,7 @@ import {
 
 export const friendReducer = (state = initState, action) => {
   const { type, payload } = action;
-  console.log('friend',payload);
+  // console.log('friend',payload);
 
   switch (type) {
     case ADD_FRIEND:
@@ -16,7 +16,7 @@ export const friendReducer = (state = initState, action) => {
       return payload;
 
     case DELETE_FRIEND_OUT:
-      return state
+      return []
     default:
       return state;
   }

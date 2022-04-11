@@ -10,7 +10,7 @@ console.log('userRoom' , payload);
     case OUT_USER_ROOM:
       return null
       case IN_USER_ROOM:
-      return payload
+      return [payload]
 
     default:
       return state;

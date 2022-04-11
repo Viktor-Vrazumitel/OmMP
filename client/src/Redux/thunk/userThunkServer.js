@@ -8,7 +8,7 @@ import { createRoomAction, inUserRoomAction } from '../actions/userRoomAction'
 
 
 export const createBaseRoom =(title,user_id) =>(dispatch)=>{
-   
+   console.log(title,user_id);
     axios.post(`${URL_BASE}/room`, {title,user_id})
     .then(res=> dispatch(createRoomAction(res.data)))
 }
