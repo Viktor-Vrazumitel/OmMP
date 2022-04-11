@@ -8,7 +8,9 @@ function FriendList() {
 
     return (
         <div>
+
 {friends && friends.map(el => <Friend key={el.id} name={el.name}/>)}
+
         </div>
     )
 }

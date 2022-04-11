@@ -19,6 +19,7 @@ function modal(clazz) {
   const elems = document.querySelector(clazz);
   console.log('click');
   const instances = M.Modal.init(elems);
+
 }
 
 function Layout() {
@@ -45,14 +46,8 @@ dispatch(createBaseRoom(input,userIn))
   return (
     <div className={style.bars}>
       <div className={style.left}>
-
-    
         <div className={style.logo}>
-           <span onClick={()=>navigate('/')}>OmMP</span>
-           
-
-        <div>
-          <logo />
+        <img className={style.newLogo} src={logo} alt="" />
         </div>
         {/* <div className={style.logo}> */}
         {/* <span onClick={()=>navigate('/')}>OmMP</span>
