@@ -33,24 +33,7 @@ navigate('/signin')
         <span className={style.title}>Комнаты</span> 
       </div>
       <div className={style.rooms}>
-        {/* <RoomList/> */}
-
-
-
-      
-
-
-        
-
-            <Room />
-            <Room />
-            <Room />
-            <Room />
-            <Room />
-
-        
- 
-        
+        <RoomList/>
       </div>
       <div className={style.betaBlock}>
         <div >
@@ -81,7 +64,6 @@ navigate('/signin')
       </div>
 
 
- 
 
 
     

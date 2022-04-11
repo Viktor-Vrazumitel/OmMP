@@ -47,8 +47,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/search", async (req, res) => {
-  const { login } = req.body;
+  const { login, userIn } = req.body;
   const user = await User.findOne({ where: { login } });
+  await Friend.create({name:user.login, user_id:userIn.id})
   res.json(user);
 });
 
