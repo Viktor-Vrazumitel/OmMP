@@ -1,9 +1,10 @@
 import React from 'react'
+import style from './divNewRoom.module.css'
 
 function DivNewRoom({title}) {
     return (
       
-        <div>
+        <div className={style.divRoom}>
 
 {title}
 

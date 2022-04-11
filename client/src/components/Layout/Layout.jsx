@@ -22,6 +22,8 @@ import { upDateRoom } from "../../Redux/actions/roomAction";
 import { useEffect } from "react";
 import { createRoomAction } from "../../Redux/actions/userRoomAction";
 import DivNewRoomList from "../divNewRoomList/divNewRoomList";
+import logo from '../../img/logo/logo1.svg'
+
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
@@ -35,7 +37,6 @@ function Layout() {
   const userIn = useSelector((state) => state.user);
   const myRoom = useSelector((state) => state.rooms);
   const usRoom = useSelector((state) => state.userRoom);
-
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
   }
@@ -52,14 +53,18 @@ function Layout() {
   return (
     <div className={style.bars}>
       <div className={style.left}>
+
+
         <div className={style.logo}>
-          <span onClick={() => navigate("/")}>OmMP</span>
+          <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
+
         </div>
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoom}`}>
             cast Моя комната
           </span>
+
           <DivNewRoomList/>
           {/* {!usRoom.length ? (
             <DivNewRoom
