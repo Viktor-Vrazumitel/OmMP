@@ -3,16 +3,13 @@ import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
 import {  outUserRoomAction } from "./userRoomAction";
 import {  inUserBaseRoom } from "../thunk/userThunkServer";
-import { deleteUser } from "./freindAction";
+import { deleteUser, outDeletFriend } from "./freindAction";
+import { findBaseFriendUser } from "../thunk/friendThunk";
 
 
 
 
-export const deleteListFriendSingout =()=>{
-  return{
-    type: DELETE_FRIEND_OUT
-  }
-}
+
 export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
@@ -49,7 +46,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     
     navigate('/');
   } else {
-    navigate('/signup');
+    navigate('/auth/signup');
   }
   dispatch(disableLoader());
 };
@@ -68,7 +65,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
     const user = await response.json();
     dispatch(setUser(user));
     dispatch(inUserBaseRoom(user))
-    // dispatch(findBaseFriendUser(user))
+    dispatch(findBaseFriendUser(user))
     navigate(from);
   } else {
     navigate('/auth/signin');
@@ -84,7 +81,7 @@ export const signOut = () => async (dispatch) => {
   });
   if (response.status === 200) {
     dispatch(deleteUser());
-    dispatch(deleteListFriendSingout())
+    dispatch(outDeletFriend())
     dispatch(outUserRoomAction())
   }
 };
