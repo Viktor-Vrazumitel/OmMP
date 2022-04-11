@@ -15,7 +15,6 @@ import SignUp from '../Forms/SignUp/SignUp'
 import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
 
-import logo from '../../img/logo/logo.svg'
 
 
 import { findBaseUser } from '../../Redux/thunk/friendThunk';
@@ -46,16 +45,16 @@ function inHomeHandler(){
 }
 
 
-  const navigate = useNavigate()
+
    
 
   return ( 
-<div className={style.bars}>
+    <div className={style.bars}>
       
 
       <div className={style.left}>
         <div>
-        <logo />
+          <logo />
         </div>
         {/* <div className={style.logo}> */}
            {/* <span onClick={()=>navigate('/')}>OmMP</span>
@@ -92,6 +91,7 @@ function inHomeHandler(){
         </div>
       </div>
     
+    </div>
 
     <Routes>
        <Route path="/auth/signin" element={<SignIn />} />
@@ -115,7 +115,6 @@ function inHomeHandler(){
       <ModalWindow funcHandler={findUser}/>
       </div>
     </div>
-
 
     </div>
 
