@@ -14,6 +14,8 @@ import { findBaseUser } from "../../Redux/thunk/friendThunk";
 import ModalTest from "../UI/ModalTest/ModalTest";
 import { createBaseRoom } from "../../Redux/thunk/userThunkServer";
 import DivNewRoom from "../divNewRoom/divNewRoom";
+import logo from '../../img/logo/logo1.svg'
+
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
@@ -27,7 +29,7 @@ function Layout() {
   const dispatch = useDispatch();
   const userIn = useSelector((state) => state.user);
 const myRoom = useSelector(state=> state.userRoom)
-
+console.log(myRoom)
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
     console.log("layout");
@@ -46,9 +48,11 @@ dispatch(createBaseRoom(input,userIn))
   return (
     <div className={style.bars}>
       <div className={style.left}>
-        
+
+
         <div className={style.logo}>
-        <span onClick={()=>navigate('/')}>OmMP</span>
+          <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
+
         
 
 
@@ -59,7 +63,6 @@ dispatch(createBaseRoom(input,userIn))
             cast Моя комната
           </span>
           {myRoom && <DivNewRoom key={myRoom[0].id} onClick={inHomeHandler} title={myRoom[0].title}/> }
-          
           <div className={style.fakeRoom}></div>
           <div className={style.fakeRoom}></div>
         </div>
