@@ -8,19 +8,25 @@ import FriendList from '../FriendList/FriendList';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Signin from '../Signin/Signin';
 import { useDispatch } from 'react-redux';
-import { findBaseUser } from '../../Redux/thunk/userThunkServer';
+
 import MyRoom from '../MyRoom/MyRoom';
 import SignIn from '../Forms/SignIn/SignIn';
 import SignUp from '../Forms/SignUp/SignUp'
 import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
+
 import logo from '../../img/logo/logo.svg'
+
+
+import { findBaseUser } from '../../Redux/thunk/friendThunk';
 
 function modal(){
   const elems = document.querySelectorAll('.modal');
   console.log(elems);
   const instances = M.Modal.init(elems);
 }
+
+
 
 function Layout() {
   M.AutoInit();
@@ -29,15 +35,24 @@ function Layout() {
 
   function findUser(input) {
     dispatch(findBaseUser(input))
+    console.log('layout');
   }
+
+
+  const navigate = useNavigate()
+
+function inHomeHandler(){
+  navigate('/')
+}
 
 
   const navigate = useNavigate()
    
 
   return ( 
-    <div className={style.bars}>
+<div className={style.bars}>
       
+
       <div className={style.left}>
         <div>
         <logo />
@@ -73,7 +88,7 @@ function Layout() {
               <div className={`material-icons ${style.headset}`}>mic</div>
               <div className={`material-icons ${style.headset}`}>headphones</div>
               <div className={`material-icons ${style.headset}`}>settings</div>
-          </div>
+
         </div>
       </div>
     
@@ -92,10 +107,7 @@ function Layout() {
 
     <div className={style.right}>
       <FriendList/>
-      {/* <Friend />
-      <Friend />
-      <Friend />
-      <Friend /> */}
+
       
       <div className={style.btnAdd}>
       <span className={`modal-trigger ${style.addFriend}`} href='#modal1'  onClick={modal} ><i className={`material-icons ${style.addIcon}`}>add</i></span>

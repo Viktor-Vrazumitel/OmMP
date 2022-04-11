@@ -1,6 +1,11 @@
 
+
 import Footer from '../Footer/Footer';
 import MyNavbar from '../Navbar/Navbar';
+
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import Room from '../Room/Room';
 import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css';
@@ -9,7 +14,15 @@ import style from './Page.module.css';
 
 
 function MainPage() {
-  
+
+
+const navigate = useNavigate()
+const user = useSelector(state=> state.user)
+function singInHandler(){
+navigate('/signin')
+}
+
+
   return ( 
     <>
     <div className={style.back}>
@@ -22,6 +35,9 @@ function MainPage() {
       <div className={style.rooms}>
         {/* <RoomList/> */}
 
+
+{user ? <></> : <button type="button" className={`btn btn-lg btn-success ${style.btn}`} onClick={singInHandler}>Войти</button> }
+      
 
 
         

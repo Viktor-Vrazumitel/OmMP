@@ -1,19 +1,23 @@
-import { ADD_FRIEND, DELETE_FRIEND_OUT } from "../type/type";
+import { initState } from "../initState";
+import {
+  ADD_FRIEND,
+  DELETE_FRIEND_OUT,
+  GET_FRIENDS_USER_BASE,
+} from "../type/type";
 
-export const friendReducer = (state = [], action) => {
-    const { type, payload } = action;
-   
-    switch (type) {
-      case ADD_FRIEND:
-          
-           if(state.find(el => el.id === payload.id)){
-               return state
-           }
-           return [...state,payload]
-  
-           case DELETE_FRIEND_OUT:
-           return null
-      default:
-        return state
-    }
-  };
+export const friendReducer = (state = initState, action) => {
+  const { type, payload } = action;
+  console.log('friend',payload);
+
+  switch (type) {
+    case ADD_FRIEND:
+      return [...state, payload];
+    case GET_FRIENDS_USER_BASE:
+      return payload;
+
+    case DELETE_FRIEND_OUT:
+      return state
+    default:
+      return state;
+  }
+};

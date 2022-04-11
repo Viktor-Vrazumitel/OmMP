@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { allBaseRoom } from '../../Redux/thunk/userThunkServer'
+import {  useSelector } from 'react-redux'
 import Friend from '../UI/FriendIcon/FriendIcon'
 
 function FriendList() {
