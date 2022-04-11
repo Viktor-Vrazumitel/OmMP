@@ -22,6 +22,12 @@ width = 10;
 
 
 
+
+
+
+
+
+
 window.onclick = function () {
   if (context) return;
 
