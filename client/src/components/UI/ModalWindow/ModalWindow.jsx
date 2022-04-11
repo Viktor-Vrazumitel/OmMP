@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MyInput from "../Input/Input";
-
+import style from './ModalWindow.module.css'
 
 
 function ModalWindow({funcHandler}) {
@@ -8,13 +8,13 @@ function ModalWindow({funcHandler}) {
   
 
   return (
-    <div id="modal1" className="modal">
+    <div id="modal1" className={`modal ${style.body}`}>
       <div className="modal-content">
-        <h4>Modal Header</h4>
+        <h4>Добавить в друзья</h4>
         <MyInput input={input} setInput={setInput}/>
       </div>
-      <div className="modal-footer">
-        <button className="modal-close waves-effect waves-green btn-flat" onClick={()=>funcHandler(input)}>
+      <div className={`modal-footer ${style.modalFooter}`}>
+        <button className={`modal-close ${style.btnAdd}`} onClick={()=>funcHandler(input)}>
           Добавить
         </button>
       </div>

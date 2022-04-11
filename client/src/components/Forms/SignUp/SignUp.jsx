@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signUp } from '../../../Redux/actions/userAction';
+import Footer from '../../Footer/Footer';
+import MyNavbar from '../../Navbar/Navbar';
+import style from './SignUp.module.css'
 
 function SignUp() {
   const [userSignUp, setUserSignUp] = useState({
@@ -28,24 +31,29 @@ function SignUp() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <form onSubmit={submitHandler} className="d-flex flex-column align-items-center bg-light text-dark p-3 border rounded-3">
-        <legend className="text-center mb-4">User Sign Up</legend>
+    <div className={style.back}>
+      <MyNavbar />
+       <div className={style.form}>
+      <form onSubmit={submitHandler} className={style.inputBox}>
+        <legend className={style.title}>Регистрация</legend>
         <div className="mb-3">
-          <input onChange={changeHandler} className="form-control" value={userSignUp.email} type="email" name="email" placeholder="Email" />
+          <input onChange={changeHandler} className={style.input} value={userSignUp.email} type="email" name="email" placeholder=" Почта" />
         </div>
 
         <div className="mb-3">
-          <input onChange={changeHandler} className="form-control" value={userSignUp.login} type="text" name="login" placeholder="Name" />
+          <input onChange={changeHandler} className={style.input} value={userSignUp.login} type="text" name="login" placeholder=" Имя" />
         </div>
 
         <div className="mb-3">
-          <input onChange={changeHandler} className="form-control" value={userSignUp.password} type="password" name="password" placeholder="Pass" />
+          <input onChange={changeHandler} className={style.input} value={userSignUp.password} type="password" name="password" placeholder=" Пароль" />
         </div>
 
-        <button type="submit" className="btn btn-primary">Sign Up</button>
+        <button type="submit" className={style.btnSubmit}>Отправить</button>
       </form>
+    </div>   
+    <Footer />
     </div>
+
   );
 }
 

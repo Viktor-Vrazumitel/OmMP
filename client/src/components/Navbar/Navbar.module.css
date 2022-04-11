@@ -1,0 +1,83 @@
+.navLink {
+  color: rgb(110, 111, 115);
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3%;
+  margin-top: 1%;
+
+}
+
+.link {
+  box-shadow: none;
+  text-shadow: 0 0 0px transparent;
+  transition: .2s;
+  -webkit-transition: .2s;
+  padding: 10px ;
+  line-height: 40px;
+  margin: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 10vw;
+  color: rgb(110, 111, 115);
+  font-size: 22px;
+
+}
+
+.link:hover {
+ border: 2px solid rgb(74, 81, 246);
+ border-radius: 10px;
+ color: white;
+ text-shadow: 0 0 4px rgb(255, 255, 255);
+ box-shadow: inset 0 0 6px rgb(74, 81, 246),  0 0 6px rgb(74, 81, 246);
+ background-color: rgb(74, 81, 246);
+}
+
+.linkIn {
+  box-shadow: none;
+  text-shadow: 0 0 0px transparent;
+  transition: .2s;
+  -webkit-transition: .2s;
+  padding: 10px;
+  line-height: 40px;
+  margin: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 10vw;
+  color: rgb(110, 111, 115);
+  font-size: 22px;
+}
+
+.linkIn:hover {
+ border: 2px solid rgb(8, 200, 40);
+ border-radius: 10px;
+ color: white;
+ text-shadow: 0 0 4px rgb(255, 255, 255);
+ box-shadow: inset 0 0 6px rgb(8, 200, 40),  0 0 6px rgb(8, 200, 40);
+ background-color: rgb(8, 200, 40);
+}
+
+.linkOut {
+  box-shadow: none;
+  text-shadow: 0 0 0px transparent;
+  transition: .2s;
+  -webkit-transition: .2s;
+  padding: 10px;
+  line-height: 40px;
+  margin: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 10vw;
+  color: rgb(110, 111, 115);
+  font-size: 22px;
+
+}
+.linkOut:hover {
+ border: 2px solid rgb(192, 51, 51);
+ border-radius: 10px;
+ color: white;
+ text-shadow: 0 0 4px rgb(255, 255, 255);
+ box-shadow: inset 0 0 6px rgb(192, 51, 51),  0 0 6px rgb(192, 51, 51);
+ background-color: rgb(192, 51, 51);
+}
+
+

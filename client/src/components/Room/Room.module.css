@@ -1,5 +1,7 @@
 .card {
   margin: 1%;
   border-radius: 12px;
-  
+  border: solid white 1px;
+  width: 8vw;
+  height: 15vh;
 }
