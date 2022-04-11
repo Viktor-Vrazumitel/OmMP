@@ -30,7 +30,7 @@
 }
 
 .logo {
-
+  cursor: pointer;
   margin-left: 10%;
   margin-top: 8%;
   font-family: sans-serif;
@@ -104,6 +104,7 @@
   display: flex;
   justify-content: center;
   margin-left: 12%;
+  cursor: pointer;
 }
 .createRoom:hover {
  border: 2px solid rgb(74, 81, 246);
@@ -132,9 +133,8 @@
   color: rgb(110, 111, 115);
   font-size: 22px;
   border: 2px solid rgb(110, 111, 115);
-  
-
 }
+
 .addFriend:hover {
  border: 2px solid rgb(8, 200, 40);
  border-radius: 50%;
@@ -151,6 +151,11 @@
   width: 14vw;
   height: 3.5vh;
   background-color: rgb(35, 36, 42);
+  cursor: pointer;
 }
 
-
+.newLogo{
+  width: 100px;
+margin-left: 15%;
+margin-top: 10%;
+}
