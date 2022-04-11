@@ -36,6 +36,8 @@ window.onclick = function () {
   analyser = context.createAnalyser();
 
 
+
+  
   let displayMediaOptions = {
   video: {
     cursor: "always"
@@ -75,7 +77,7 @@ function loop() {
 return ( 
     <div id='newid' className={style.musicBox}>
 
-      <h1>Click</h1>
+      <h1>Начать эфир</h1>
       {/* <button id='btn444'>giStream</button> */}
     </div>
    );

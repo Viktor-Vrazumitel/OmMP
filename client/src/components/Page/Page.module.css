@@ -1,10 +1,11 @@
 .back {
-  background-image: url('https://oir.mobi/uploads/posts/2021-03/1616544260_43-p-zhivoi-fon-54.jpg');
+  background-color: rgb(27, 28, 34);
   background-size: cover;
-  width: 77vw;
+  width: 77.5vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  border-left: solid rgb(51, 52, 58);
 }
 
 .info {
@@ -17,11 +18,9 @@
 
 .rooms {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   margin-left: 4%;
   margin-right: 4%;
-  margin-top: 2%;
 }
 
 .btn {
@@ -30,4 +29,61 @@
   width: 12vw;
   height: 4vh;
 }
+
+.popBox {
+  display: flex;
+  flex-direction: column;
+  color: rgb(110, 111, 115);
+}
+
+.pop {
+  background-color: rgb(37, 38, 44);
+  width: 30vw;
+  height: 5.5vh;
+  border-radius: 10px;
+  margin: 1%;
+}
+
+.janrBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgb(110, 111, 115);
+  max-width: 30vw;
+}
+
+.janr {
+  background-color: rgb(35, 36, 42);
+  width: 14vw;
+  height: 15vh;
+  border-radius: 10px;
+  margin: 1%;
+}
+
+.betaBlock {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title {
+  color: white;
+  font-size: 32px;
+}
+
+.titleBox {
+  display: flex;
+  justify-content:flex-start;
+  margin-left: 2%;
+}
+
+.titleBoxRooms {
+  display: flex;
+  justify-content:flex-start;
+  margin-left: 8%;
+}
+
+
+
+
+
 

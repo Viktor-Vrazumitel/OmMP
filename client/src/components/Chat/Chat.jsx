@@ -48,32 +48,38 @@ function ChatWindow() {
       <div className={style.center}>
         <div className={style.form}>
           <input
+            className={style.inputText}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
-            placeholder="Введите ваше имя"
+            placeholder=" Введите ваше имя"
           />
-          <button onClick={connect}>Войти</button>
+          <button className={style.logBtn} onClick={connect}>Войти</button>
         </div>
-        <AudioStream />
       </div>
     );
   }
 
   return (
     <div className={style.center}>
-      <div>
-       
+      <div >
         <div className={style.messages}>
           {messages.map((mess) => (
             <div key={mess.id}>
               {mess.event === "connection" ? (
-                <div className={style.connection_message}>
+                <div className={style.messages}>
                   Пользователь {mess.username} подключился
                 </div>
               ) : (
                 <div className={style.messages}>
-                  {mess.username}. {mess.message}
+                  <div className={style.chat}>
+                    <div className={style.userStyle}>
+                    {mess.username}: 
+                    </div>
+                    <div className={style.messageStyle}>
+                    {mess.message}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -81,11 +87,14 @@ function ChatWindow() {
         </div>
         <div className={style.form}>
           <input
+            
+            className={style.inputText}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             type="text"
+            
           />
-          <button className={style.sendBtn} onClick={sendMessage}>Отправить</button>
+          <button className={style.sendBtn} onClick={sendMessage}><span className='material-icons'>send</span></button>
         </div>
       </div>
     </div>

@@ -14,7 +14,12 @@ import SignIn from '../Forms/SignIn/SignIn';
 import SignUp from '../Forms/SignUp/SignUp'
 import SignOut from '../Forms/SignOut/SignOut';
 import PrivateRoute from '../PrivateRouter/PrivateRouter';
+
+import logo from '../../img/logo/logo.svg'
+
+
 import { findBaseUser } from '../../Redux/thunk/friendThunk';
+
 function modal(){
   const elems = document.querySelectorAll('.modal');
   console.log(elems);
@@ -33,50 +38,65 @@ function Layout() {
     console.log('layout');
   }
 
+
   const navigate = useNavigate()
 
 function inHomeHandler(){
   navigate('/')
 }
 
-  
-  
+
+  const navigate = useNavigate()
    
 
   return ( 
-    <div className={style.bars}>
+<div className={style.bars}>
       
-    <div className={style.left}>
-     <div className={style.logo} onClick={inHomeHandler}>
-       Logo
-     </div>
-    <div>
-      <MyInput />
-    </div>
-    <div className={style.menu}>
-      <Menu />
-    </div>
-     <div className={style.btnBlock}>
-        <div >
-        <button className={style.headset}><i className="material-icons left">headset</i></button>
-          </div>
-          <div>
-          <button className={style.headset}><i className="material-icons left">volume_off</i></button>
 
+      <div className={style.left}>
+        <div>
+        <logo />
+        </div>
+        {/* <div className={style.logo}> */}
+           {/* <span onClick={()=>navigate('/')}>OmMP</span>
+            */}
 
-          </div>
-          <div>
-          </div>
-          <button className={style.headset}><i className="material-icons left">settings</i></button>
+        {/* </div> */}
 
-     </div>
-   </div>
+        <div className={style.myRooms}>
+          <span className={`material-icons ${style.fontRoom}`}>cast Мои комнаты</span>
+          <div className={style.fakeRoom}>1</div>
+          <div className={style.fakeRoom}>2</div>
+          <div className={style.fakeRoom}>3</div>
+        </div>
+
+        <div className={style.myFavorite}>
+          <span className={`material-icons ${style.fontRoom}`}>star Избранное</span>
+          <div className={style.fakeRoom}>1</div>
+          <div className={style.fakeRoom}>2</div>
+          <div className={style.fakeRoom}>3</div>
+          <div className={style.fakeRoom}>4</div>
+          <div className={style.fakeRoom}>5</div>
+        </div>
+        
+        <div className={style.createRoom}>
+          <span className={`material-icons ${style.fontRoom}`}>add_circle_outline Создать комнату</span>
+        </div>
+
+        <div>
+          <div className={style.btnBlock}>
+              <div className={`material-icons ${style.headset}`}>mic</div>
+              <div className={`material-icons ${style.headset}`}>headphones</div>
+              <div className={`material-icons ${style.headset}`}>settings</div>
+
+        </div>
+      </div>
     
 
     <Routes>
        <Route path="/auth/signin" element={<SignIn />} />
        <Route path="/auth/signup" element={<SignUp />} />
-       <Route path='/signin' element={<Signin />}/>
+       {/* <Route path='/signin' element={<Signin />}/> */}
        <Route path='/' element={<MainPage />}/>
        <Route path='/room' element={<MyRoom />}/>
        <Route path="/auth/signout" element={<PrivateRoute><SignOut /></PrivateRoute>} />
@@ -84,15 +104,13 @@ function inHomeHandler(){
 
      </Routes>
 
+
     <div className={style.right}>
       <FriendList/>
-      {/* <Friend />
-      <Friend />
-      <Friend />
-      <Friend /> */}
+
       
       <div className={style.btnAdd}>
-      <a className="btn-floating btn-large waves-effect waves-light green modal-trigger" href='#modal1'  onClick={modal} ><i className="material-icons">add</i></a>
+      <span className={`modal-trigger ${style.addFriend}`} href='#modal1'  onClick={modal} ><i className={`material-icons ${style.addIcon}`}>add</i></span>
       
       <ModalWindow funcHandler={findUser}/>
       </div>
