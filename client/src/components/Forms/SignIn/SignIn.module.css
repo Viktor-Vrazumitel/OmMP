@@ -63,7 +63,7 @@ input.input::-webkit-input-placeholder { color: rgb(110, 111, 115); }
 
 .input:focus {
   border-radius: 10px !important;
-  border:  rgb(110, 111, 115) solid !important;
+  border:  rgb(13, 240, 240) 1px solid !important;
   box-shadow: none !important;
 }
 

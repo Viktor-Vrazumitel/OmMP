@@ -5,7 +5,8 @@ import style from './Carousel.module.css'
 
 export function Car() {
   return (
-    <Splide className={style.carousel} options={ { rewind: true, width:950, height: 150, perPage: 6} } aria-label="React Splide Example">
+    <Splide className={style.carousel} options={ { type: 'loop',  width:950, height: 150,  pagination:false, perPage: 6} } aria-label="React Splide Example">
+
       <SplideSlide>
         <Room />
       </SplideSlide>
@@ -42,6 +43,9 @@ export function Car() {
       <SplideSlide>
         <Room />
       </SplideSlide>
+ 
+
     </Splide>
+    
   );
 }
