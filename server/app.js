@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const FileStore = require("session-file-store")(session);
 const axios = require("axios");
+const { Op } = require("sequelize");
 const { User, Room, Friend } = require("./db/models");
 const authRouter = require("./src/routes/auth.router");
 const usersRouter = require("./src/routes/users.router");
@@ -53,6 +54,12 @@ app.post("/search", async (req, res) => {
   
   const friend = await Friend.create({name:login, user_id:userIn.id})
   res.json(friend);
+});
+
+app.get("/search/:title", async (req, res) => {
+  const {title} = req.params
+  const room = await Room.findAll({ where: { title:{[Op.startsWith]:`${title}%`} } });
+  res.json(room);
 });
 
 app.get("/room", async (req, res) => {

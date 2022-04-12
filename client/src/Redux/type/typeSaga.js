@@ -1,0 +1,1 @@
+export const SEARCH_ROOM_S = 'SEARCH_ROOM_S'

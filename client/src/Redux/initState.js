@@ -2,6 +2,7 @@ export const initState = {
   userRoom: [],
   rooms: [],
   myFriend: [],
+  search: [],
   user: null,
   loader: false
 };

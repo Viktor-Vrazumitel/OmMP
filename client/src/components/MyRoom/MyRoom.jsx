@@ -15,12 +15,12 @@ function MyRoom() {
   const inRoom = rooms.filter((el) => el.id === +id);
 
   useEffect(() => {
-    if (userIn.id === inRoom[0].user_id) {
+    if (userIn?.id === inRoom[0]?.user_id) {
       setStatus(false);
     } else {
       setStatus(true);
     }
-  }, [inRoom, userIn.id]);
+  }, [inRoom, userIn?.id]);
 
   return (
     <div className={style.main}>
