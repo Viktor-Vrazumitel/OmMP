@@ -30,7 +30,8 @@
 }
 
 .logo {
-
+  height: 14.47vh;
+  cursor: pointer;
   margin-left: 10%;
   margin-top: 8%;
   font-family: sans-serif;
@@ -38,22 +39,21 @@
   text-decoration: none;
   text-shadow:
     -2px 4px 4px #091243, 
-    0 0 10px #00D0FF,
+    0 0 10px #8c00ff,
     inset 1px 1px 1px white;
-  color: #1FFFFF;
+  color: rgb(95, 24, 169);
   border: 2px solid;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: transparent;
   box-shadow: 
     0 1px 2px rgba(0,0,0, 0.6), 
     2px 1px 4px rgba(0,0,0, 0.3), 
-    2px 4px 3px rgba(3,0,128, 0.3), 
-    0 0 7px 2px rgba(0,208,255, 0.6), 
+    2px 4px 3px rgba(77, 0, 128, 0.3), 
+    0 0 7px 2px rgba(82, 12, 211, 0.6), 
     inset 0 1px 2px rgba(0,0,0, 0.6), 
     inset 2px 1px 4px rgba(0,0,0, 0.3), 
-    inset 2px 4px 3px rgba(3,0,128, 0.3), 
-    inset 0 0 7px 2px rgba(0,208,255, 0.6);
-
+    inset 2px 4px 3px rgba(2, 0, 128, 0.3), 
+    inset 0 0 7px 2px rgba(130, 18, 235, 0.6);
 }
 
 .btnBlock {
@@ -104,6 +104,7 @@
   display: flex;
   justify-content: center;
   margin-left: 12%;
+  cursor: pointer;
 }
 .createRoom:hover {
  border: 2px solid rgb(74, 81, 246);
@@ -114,9 +115,7 @@
  background-color: rgb(74, 81, 246);
 }
 
-.fontRoom {
-  font-size: 20px;
-}
+
 
 .addFriend {
   box-shadow: none;
@@ -132,9 +131,8 @@
   color: rgb(110, 111, 115);
   font-size: 22px;
   border: 2px solid rgb(110, 111, 115);
-  
-
 }
+
 .addFriend:hover {
  border: 2px solid rgb(8, 200, 40);
  border-radius: 50%;
@@ -151,6 +149,11 @@
   width: 14vw;
   height: 3.5vh;
   background-color: rgb(35, 36, 42);
+  cursor: pointer;
 }
 
-
+.newLogo{
+  width: 100px;
+margin-left: 15%;
+margin-top: 10%;
+}

@@ -11,7 +11,7 @@ function ModalWindow({funcHandler}) {
     <div id="modal1" className={`modal ${style.body}`}>
       <div className="modal-content">
         <h4>Добавить в друзья</h4>
-        <MyInput input={input} setInput={setInput}/>
+        <MyInput input={input} setInput={setInput} holder='Найти '/>
       </div>
       <div className={`modal-footer ${style.modalFooter}`}>
         <button className={`modal-close ${style.btnAdd}`} onClick={()=>funcHandler(input)}>

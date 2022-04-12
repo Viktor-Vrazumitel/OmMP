@@ -16,7 +16,7 @@ export const friendReducer = (state = initState, action) => {
       return payload;
 
     case DELETE_FRIEND_OUT:
-      return state
+      return []
     default:
       return state;
   }

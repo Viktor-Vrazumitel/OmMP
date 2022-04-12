@@ -46,7 +46,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     
     navigate('/');
   } else {
-    navigate('/signup');
+    navigate('/auth/signup');
   }
   dispatch(disableLoader());
 };
