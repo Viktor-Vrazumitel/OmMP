@@ -20,11 +20,11 @@ dispatch(delRoomInAll(id))
 
   return (
     <>
-      <div className={style.btnBox}>
-        <button className={style.btn} onClick={()=>deletRoomHandler(id)}></button>
-      </div>
       <div className={style.divRoom} onClick={inHomeHandler}>
         {title}
+      </div>
+      <div className={style.btnBox}>
+        <button className={style.btn} onClick={()=>deletRoomHandler(id)}>x</button>
       </div>
     </>
   );

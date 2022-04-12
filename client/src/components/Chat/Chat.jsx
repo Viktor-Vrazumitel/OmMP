@@ -95,7 +95,7 @@ function ChatWindow() {
             type="text"
             
           />
-          <button className={style.sendBtn} onClick={sendMessage}><span className='material-icons'>send</span></button>
+          <button className={`grey darken-4 ${style.sendBtn} `} onClick={sendMessage}><span className='material-icons'>send</span></button>
         </div>
       </div>
     </div>
