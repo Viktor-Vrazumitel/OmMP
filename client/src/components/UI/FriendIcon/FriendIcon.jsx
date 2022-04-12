@@ -10,7 +10,7 @@ function Friend({name}) {
     {name}
   </div>
   <div>
-    <button></button>
+    <button className={style.btnDelFriend}>x</button>
   </div>
 </div>
    );

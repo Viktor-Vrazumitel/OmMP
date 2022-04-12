@@ -25,6 +25,8 @@ import DivNewRoomList from "../divNewRoomList/divNewRoomList";
 import logo from '../../img/logo/logo1.svg'
 
 
+
+
 function modal(clazz) {
   const elems = document.querySelector(clazz);
 
@@ -64,8 +66,11 @@ function Layout() {
           <span className={`material-icons ${style.fontRoom}`}>
             cast Моя комната
           </span>
+            <div className={style.roomlist}>
+              <DivNewRoomList/>
 
-          <DivNewRoomList/>
+
+            </div>
           {/* {!usRoom.length ? (
             <DivNewRoom
               key={myRoom[0]?.id}
@@ -100,9 +105,9 @@ function Layout() {
 
         <div>
           <div className={style.btnBlock}>
-            <div className={`material-icons ${style.headset}`}>mic</div>
+            <div className={`material-icons ${style.mic}`}>mic</div>
             <div className={`material-icons ${style.headset}`}>headphones</div>
-            <div className={`material-icons ${style.headset}`}>settings</div>
+            <div className={`material-icons ${style.settings}`}>settings</div>
           </div>
         </div>
       </div>

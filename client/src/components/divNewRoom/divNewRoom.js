@@ -9,8 +9,8 @@ function DivNewRoom({title}) {
 {title}
 
         </div>
-        <div className={style.btn}>
-          <button></button>
+        <div className={style.btnBox}>
+          <button className={style.btn}>x</button>
         </div>
       </>
     

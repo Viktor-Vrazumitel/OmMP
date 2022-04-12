@@ -14,6 +14,7 @@ import dj from '../../img/music/dj.webp'
 import plastinka from '../../img/music/plastinka.webp'
 import synt from '../../img/music/synt.webp'
 import Popular from '../Popular/Popular';
+import { Car } from '../Corousel/Carousel';
 
 
 
@@ -37,7 +38,8 @@ navigate('/signin')
         <span className={style.title}>Комнаты</span> 
       </div>
       <div className={style.rooms}>
-        <RoomList/>
+        {/* <RoomList/> */}
+        <Car />
       </div>
       <div className={style.betaBlock}>
         <div >
