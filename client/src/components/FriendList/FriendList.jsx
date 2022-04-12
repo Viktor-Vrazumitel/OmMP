@@ -3,13 +3,13 @@ import Friend from '../UI/FriendIcon/FriendIcon'
 
 function FriendList() {
     const friends = useSelector(state=> state.myFriend)
-  console.log(friends)
+ 
 
 
     return (
         <div>
 
-{friends && friends.map(el => <Friend key={el.id} name={el.name || el.login}/>)}
+{friends && friends.map(el => <Friend key={el.id} name={el.name || el.login} id={el.id}/>)}
 
 
         </div>

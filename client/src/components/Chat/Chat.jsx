@@ -78,6 +78,7 @@ function ChatWindow() {
                     </div>
                     <div className={style.messageStyle}>
                     {mess.message}
+                    
                     </div>
                   </div>
                 </div>
