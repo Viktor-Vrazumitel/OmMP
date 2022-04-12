@@ -48,15 +48,22 @@ app.get("/", (req, res) => {
 
 app.post("/search", async (req, res) => {
   const { login, userIn } = req.body;
+  console.log(login, userIn );
   const user = await User.findOne({ where: { login } });
   
-  const friend = await Friend.create({name:user.login, user_id:userIn.id})
+  const friend = await Friend.create({name:login, user_id:userIn.id})
   res.json(friend);
 });
 
 app.get("/room", async (req, res) => {
   const rooms = await Room.findAll();
   res.json(rooms);
+});
+
+app.delete("/room/:id", async (req, res) => {
+const {id} = req.params
+  const deletRoom = await Room.destroy({where:{id:+req.params.id}})
+  res.json(id);
 });
 
 app.post("/room", async (req, res) => {
@@ -81,6 +88,14 @@ app.post("/friend", async (req, res) => {
     where: { user_id: req.body.user.id },
   });
   res.json(friends);
+});
+
+app.delete("/friend/:id", async (req, res) => {
+  const {id} = req.params
+  const friends = await Friend.destroy({
+    where: { id: +req.params.id },
+  });
+  res.json(id);
 });
 
 app.listen(PORT, () => console.log(`Server vzletel ${PORT}`));

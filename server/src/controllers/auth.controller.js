@@ -3,7 +3,7 @@ const { User } = require('../../db/models');
 
 const signUp = async (req, res) => {
   const { login, password, email } = req.body;
-console.log(req.body)
+
   if (login && password && email) {
     try {
       const newUser = await User.create({

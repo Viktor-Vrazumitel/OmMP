@@ -117,7 +117,7 @@ function Layout() {
         <Route path="/auth/signup" element={<SignUp />} />
         {/* <Route path='/signin' element={<Signin />}/> */}
         <Route path="/" element={<MainPage />} />
-        <Route path="/room" element={<MyRoom />} />
+        <Route path="/room/:id" element={<MyRoom />} />
         <Route
           path="/auth/signout"
           element={
