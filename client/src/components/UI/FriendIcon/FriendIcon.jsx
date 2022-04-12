@@ -19,7 +19,9 @@ function Friend({name,id}) {
     {name}
   </div>
   <div>
-    <button onClick={()=>delFriHandler(id)}></button>
+
+    <button className={style.btnDelFriend} onClick={()=>delFriHandler(id)}>x</button>
+
   </div>
 </div>
    );

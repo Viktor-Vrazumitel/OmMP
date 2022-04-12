@@ -20,14 +20,15 @@ dispatch(delRoomInAll(id))
 
   return (
     <>
-      <div className={style.btn}>
-        <button onClick={()=>deletRoomHandler(id)}></button>
+      <div className={style.btnBox}>
+        <button className={style.btn} onClick={()=>deletRoomHandler(id)}></button>
       </div>
       <div className={style.divRoom} onClick={inHomeHandler}>
         {title}
       </div>
     </>
   );
+
 }
 
 export default DivNewRoom;
