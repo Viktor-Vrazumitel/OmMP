@@ -9,6 +9,9 @@ function Friend({name}) {
   <div className={style.name}>
     {name}
   </div>
+  <div>
+    <button></button>
+  </div>
 </div>
    );
 }

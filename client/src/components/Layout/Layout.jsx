@@ -76,8 +76,6 @@ function Layout() {
             <></>
           )} */}
 
-          <div className={style.fakeRoom}></div>
-          <div className={style.fakeRoom}></div>
         </div>
 
         <div className={style.myFavorite}>
@@ -85,10 +83,7 @@ function Layout() {
             star Избранное
           </span>
           <div className={style.fakeRoom}>1</div>
-          <div className={style.fakeRoom}>2</div>
-          <div className={style.fakeRoom}>3</div>
-          <div className={style.fakeRoom}>4</div>
-          <div className={style.fakeRoom}>5</div>
+
         </div>
 
         <div className={style.createRoom}>
