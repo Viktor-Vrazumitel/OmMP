@@ -1,7 +1,16 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteFriendAction } from '../../../Redux/actions/freindAction';
+import { deleteFrienBase } from '../../../Redux/thunk/friendThunk';
 import style from './FriendIcon.module.css'
 
 
-function Friend({name}) {
+function Friend({name,id}) {
+  const dispatch = useDispatch()
+
+  function delFriHandler(id){
+  dispatch(deleteFrienBase(id))
+  }
 
 
   return ( 
@@ -10,7 +19,7 @@ function Friend({name}) {
     {name}
   </div>
   <div>
-    <button></button>
+    <button onClick={()=>delFriHandler(id)}></button>
   </div>
 </div>
    );

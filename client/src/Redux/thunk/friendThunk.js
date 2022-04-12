@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { URL_BASE } from '../../config'
-import { addFriendAction, getFriendsInUser } from '../actions/freindAction'
+import { addFriendAction, deleteFriendAction, getFriendsInUser } from '../actions/freindAction'
 
 
 export const findBaseUser = (login,userIn) => (dispatch) =>{
@@ -11,6 +11,11 @@ export const findBaseUser = (login,userIn) => (dispatch) =>{
     export const findBaseFriendUser = (user)=>(dispatch)=>{
         axios.post(`${URL_BASE}/friend`,{user})
         .then(res=>dispatch(getFriendsInUser(res.data)))
+        }
+
+        export const deleteFrienBase = (id) => (dispatch)=>{
+            axios.delete(`${URL_BASE}/friend/${id}`)
+            .then(res => dispatch(deleteFriendAction(res.data)))
         }
 
     //     export const findFriendAction = (user)=>{

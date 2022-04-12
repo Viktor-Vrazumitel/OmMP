@@ -1,4 +1,4 @@
-import { CREATE_ROOM, IN_USER_ROOM, OUT_USER_ROOM } from "../type/type";
+import { CREATE_ROOM, DELETE_USER_ROOM, IN_USER_ROOM, OUT_USER_ROOM } from "../type/type";
 
 export const createRoomAction = (room,id) => {
     return {
@@ -17,5 +17,12 @@ export const createRoomAction = (room,id) => {
     return{
       type: IN_USER_ROOM,
       payload: room
+    }
+  }
+
+  export const deleteUserRoom = (id)=>{
+    return {
+      type: DELETE_USER_ROOM,
+      payload: id
     }
   }
