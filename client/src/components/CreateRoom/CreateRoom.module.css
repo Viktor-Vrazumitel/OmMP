@@ -1,3 +1,9 @@
-.fontRoom {
+.fontRoomLogo {
     font-size: 20px;
-  }
+    margin-right: 3px;
+}
+
+.fontRoom {
+  font-size: 20px;
+  margin-right: 3px;
+}

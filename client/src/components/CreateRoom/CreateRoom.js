@@ -5,12 +5,16 @@ function CreateRoom({modal,createRoomHandler,userIn}) {
     return (
         <>
          <span
-            className={`modal-trigger material-icons ${style.fontRoom}`}
+            className={`modal-trigger material-icons ${style.fontRoomLogo}`}
             href="#modal2"
             onClick={()=>modal('#modal2')}
           >
-            add_circle_outline Создать комнату
+            add_circle_outline
           </span>
+            <span className={style.fontRoom}>
+
+             Создать комнату
+            </span>
 
           <ModalTest funcHandler={createRoomHandler} userIn={userIn?.id} />
         </>

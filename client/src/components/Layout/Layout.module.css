@@ -109,15 +109,29 @@
 }
 
 .myRooms {
+  display: flex;
   margin-left: 10%;
   font-size: 16px;
   color: rgb(110, 111, 115);
 }
 
+.myRoomLogo {
+  margin-right: 5px;
+}
+
 .myFavorite {
+  display: flex;
   margin-left: 10%;
-  font-size: 16px;
   color: rgb(110, 111, 115);
+}
+
+.fontRoom {
+  font-size: 20px;
+}
+
+.fontRoomLogo {
+  font-size: 26px;
+  margin-right: 5px;
 }
 
 .createRoom {
@@ -146,6 +160,8 @@
 }
 
 .addFriend {
+  display: flex;
+  justify-content: center;
   box-shadow: none;
   text-shadow: 0 0 0px transparent;
   transition: .2s;
@@ -155,7 +171,6 @@
   margin: 0;
   border-radius: 50%;
   cursor: pointer;
-  width: 10vw;
   color: rgb(110, 111, 115);
   font-size: 22px;
   border: 2px solid rgb(110, 111, 115);
@@ -205,3 +220,6 @@ margin-top: 10%;
   flex-wrap: wrap;
 }
 
+/* .addIcon {
+
+} */

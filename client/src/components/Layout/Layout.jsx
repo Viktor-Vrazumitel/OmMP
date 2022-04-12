@@ -63,8 +63,11 @@ function Layout() {
         </div>
 
         <div className={style.myRooms}>
-          <span className={`material-icons ${style.fontRoom}`}>
-            cast Моя комната
+          <span className={`material-icons ${style.fontRoomLogo}`}>
+             cast 
+          </span>
+          <span className={style.fontRoom}>
+             Моя комната
           </span>
             <div className={style.roomlist}>
               <DivNewRoomList/>
@@ -84,11 +87,12 @@ function Layout() {
         </div>
 
         <div className={style.myFavorite}>
-          <span className={`material-icons ${style.fontRoom}`}>
-            star Избранное
+          <span className={`material-icons ${style.fontRoomLogo}`}>
+            star 
           </span>
-          <div className={style.fakeRoom}>1</div>
-
+          <span className={style.fontRoom}>
+            Избранное
+          </span>
         </div>
 
         <div className={style.createRoom}>
