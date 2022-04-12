@@ -20,7 +20,19 @@
   border-radius: 10px;
   cursor: pointer;
   width: 7vw;
-  background-color: rgb(8, 200, 40);
+  color: rgb(26, 207, 50);
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: transparent;
+  box-shadow: 
+    0 1px 2px rgba(0,0,0, 0.6), 
+    2px 1px 4px rgba(0,0,0, 0.3), 
+    2px 4px 3px rgba(77, 0, 128, 0.3), 
+    0 0 7px 2px rgba(82, 12, 211, 0.6), 
+    inset 0 1px 2px rgba(0,0,0, 0.6), 
+    inset 2px 1px 4px rgba(0,0,0, 0.3), 
+    inset 2px 4px 3px rgba(2, 0, 128, 0.3), 
+    inset 0 0 7px 2px rgba(130, 18, 235, 0.6);
   font-size: 18px;
 }
 
@@ -44,7 +56,19 @@
   border-radius: 10px;
   cursor: pointer;
   width: 7vw;
-  background-color: rgb(74, 81, 246);
+  color: rgb(74, 81, 246);
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: transparent;
+  box-shadow: 
+    0 1px 2px rgba(0,0,0, 0.6), 
+    2px 1px 4px rgba(0,0,0, 0.3), 
+    2px 4px 3px rgba(77, 0, 128, 0.3), 
+    0 0 7px 2px rgba(82, 12, 211, 0.6), 
+    inset 0 1px 2px rgba(0,0,0, 0.6), 
+    inset 2px 1px 4px rgba(0,0,0, 0.3), 
+    inset 2px 4px 3px rgba(2, 0, 128, 0.3), 
+    inset 0 0 7px 2px rgba(130, 18, 235, 0.6);
 
 }
 

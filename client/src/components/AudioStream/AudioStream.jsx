@@ -25,29 +25,40 @@ function AudioStream() {
     context = new AudioContext();
     analyser = context.createAnalyser();
 
-    let displayMediaOptions = {
-      video: {
-        cursor: "always",
-      },
-      audio: {
-        echoCancellation: true,
-        noiseSuppression: true,
-        sampleRate: 44100,
-      },
+    // let displayMediaOptions = {
+    //   video: {
+    //     cursor: "always",
+    //   },
+    //   audio: {
+    //     echoCancellation: true,
+    //     noiseSuppression: true,
+    //     sampleRate: 44100,
+    //   },
+    // };
+    let userMediaOptions = {
+      video: false,
+      audio: true,
     };
 
-    navigator.mediaDevices
-      .getDisplayMedia(displayMediaOptions)
-      .then((stream) => {
-        // console.log(stream, stream.getAudioTracks());
-        src = context.createMediaStreamSource(stream);
-        console.log(stream);
+    // navigator.mediaDevices
+    //   .getDisplayMedia(displayMediaOptions)
+    //   .then((stream) => {
+    //     // console.log(stream, stream.getAudioTracks());
+    //     src = context.createMediaStreamSource(stream);
+    //     // console.log(stream);
+    //     src.connect(analyser);
+    //     loop();
+    //   })
+    //   .catch((error) => {
+    //     alert(error + "\r\n Отклонено. Страница будет не обновлена!");
+    //   });
+
+      navigator.mediaDevices.getUserMedia(userMediaOptions)
+      .then((micStream) => {
+        src = context.createMediaStreamSource(micStream);
         src.connect(analyser);
         loop();
       })
-      .catch((error) => {
-        alert(error + "\r\n Отклонено. Страница будет не обновлена!");
-      });
 
     function loop() {
       window.requestAnimationFrame(loop);
