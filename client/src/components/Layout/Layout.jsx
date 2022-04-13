@@ -69,11 +69,12 @@ function Layout() {
           <span className={style.fontRoom}>
              Моя комната
           </span>
-            <div className={style.roomlist}>
+
+        </div>
+          <div className={style.roomlist}>
               <DivNewRoomList/>
+          </div>
 
-
-            </div>
           {/* {!usRoom.length ? (
             <DivNewRoom
               key={myRoom[0]?.id}
@@ -84,7 +85,6 @@ function Layout() {
             <></>
           )} */}
 
-        </div>
 
         <div className={style.myFavorite}>
           <span className={`material-icons ${style.fontRoomLogo}`}>
