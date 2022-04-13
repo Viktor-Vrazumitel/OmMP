@@ -8,7 +8,7 @@
   height: 100vh;
   background-color: rgb(25, 26, 31);
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -31,6 +31,7 @@
 
 .logo {
   height: 14.47vh;
+  width: 9vw;
   cursor: pointer;
   margin-left: 10%;
   margin-top: 8%;
@@ -72,22 +73,69 @@
   display: flex;
 }
 
+.mic {
+  color: rgb(159, 159, 160);
+  font-size: 30px;
+}
+
+.mic:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.micOff {
+  color: red;
+}
+
 .headset {
   color: rgb(159, 159, 160);
   font-size: 30px;
-  display: flex;
+}
+
+.headset:hover {
+  color: white;
+  cursor: pointer;
+
+}
+
+.settings {
+  color: rgb(159, 159, 160);
+  font-size: 30px;
+}
+
+.settings:hover {
+  color: white;
+  cursor: pointer;
+
 }
 
 .myRooms {
-  margin-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-left: 10%; */
   font-size: 16px;
   color: rgb(110, 111, 115);
 }
 
+.myRoomLogo {
+  margin-right: 5px;
+}
+
 .myFavorite {
-  margin-left: 10%;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  /* margin-left: 10%; */
   color: rgb(110, 111, 115);
+}
+
+.fontRoom {
+  font-size: 20px;
+}
+
+.fontRoomLogo {
+  font-size: 26px;
+  margin-right: 5px;
 }
 
 .createRoom {
@@ -98,28 +146,26 @@
   padding: 10px 10px ;
   line-height: 20px;
   margin: 0;
-  border-radius: 0;
+  border-radius: 10px;
   cursor: pointer;
   color: rgb(110, 111, 115);
   display: flex;
   justify-content: center;
-  margin-left: 12%;
+  margin-left: 9%;
   cursor: pointer;
 }
 .createRoom:hover {
- border: 2px solid rgb(74, 81, 246);
+
  border-radius: 10px;
  color: white;
  text-shadow: 0 0 4px rgb(255, 255, 255);
  box-shadow: inset 0 0 6px rgb(74, 81, 246),  0 0 6px rgb(74, 81, 246);
- background-color: rgb(74, 81, 246);
-}
-
-.fontRoom {
-  font-size: 20px;
+ /* background-color: rgb(74, 81, 246); */
 }
 
 .addFriend {
+  display: flex;
+  justify-content: center;
   box-shadow: none;
   text-shadow: 0 0 0px transparent;
   transition: .2s;
@@ -129,20 +175,33 @@
   margin: 0;
   border-radius: 50%;
   cursor: pointer;
-  width: 10vw;
   color: rgb(110, 111, 115);
   font-size: 22px;
   border: 2px solid rgb(110, 111, 115);
 }
 
 .addFriend:hover {
- border: 2px solid rgb(8, 200, 40);
+ /* border: 2px solid rgb(8, 200, 40);
  border-radius: 50%;
  color: white;
  text-shadow: 0 0 4px rgb(255, 255, 255);
  box-shadow: inset 0 0 6px rgb(8, 200, 40) 0 0 6px rgb(8, 200, 40);
- background-color: rgb(8, 200, 40);
+ background-color: rgb(8, 200, 40); */
+ color: rgb(156, 249, 69);
+ border: 2px solid;
+ background-color: transparent;
+ box-shadow: 
+   0 1px 2px rgba(0,0,0, 0.6), 
+   2px 1px 4px rgba(0,0,0, 0.3), 
+   2px 4px 3px rgba(3,0,128, 0.3), 
+   0 0 7px 2px rgba(0,208,255, 0.6), 
+   inset 0 1px 2px rgba(0,0,0, 0.6), 
+   inset 2px 1px 4px rgba(0,0,0, 0.3), 
+   inset 2px 4px 3px rgba(3,0,128, 0.3), 
+   inset 0 0 7px 2px rgba(0,208,255, 0.6);
 }
+
+
 
 .fakeRoom {
   border-radius: 10px;
@@ -159,3 +218,14 @@
 margin-left: 15%;
 margin-top: 10%;
 }
+
+.roomlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 7%;
+}
+
+/* .addIcon {
+
+} */

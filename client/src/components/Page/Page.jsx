@@ -14,6 +14,7 @@ import dj from '../../img/music/dj.webp'
 import plastinka from '../../img/music/plastinka.webp'
 import synt from '../../img/music/synt.webp'
 import Popular from '../Popular/Popular';
+import { Car } from '../Corousel/Carousel';
 
 
 
@@ -21,10 +22,13 @@ function MainPage() {
 
 
 const navigate = useNavigate()
-const user = useSelector(state=> state.user)
-function singInHandler(){
-navigate('/signin')
-}
+const rooms = useSelector(state=> state.rooms)
+const fiveRoom = rooms.slice(0,5)
+
+
+// function singInHandler(){
+// navigate('/signin')
+// }
 
 
   return ( 
@@ -37,7 +41,8 @@ navigate('/signin')
         <span className={style.title}>Комнаты</span> 
       </div>
       <div className={style.rooms}>
-        <RoomList/>
+        {/* <RoomList/> */}
+        <Car />
       </div>
       <div className={style.betaBlock}>
         <div >
@@ -45,7 +50,7 @@ navigate('/signin')
              <span className={style.title}>Популярное</span> 
           </div>
             <div className={style.popBox}>
-                <Popular />
+              {fiveRoom&&fiveRoom.map(el=> <Popular  key={el.id} title={el.title || el.name} id={el.id}/>)}
             </div>
         </div>
 

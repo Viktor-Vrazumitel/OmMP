@@ -8,8 +8,8 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  color: rgb(156, 249, 69);
-  border: 2px solid;
+  color: rgb(13, 240, 240);
+  border: 1px ridge;
   background-color: transparent;
   box-shadow: 
     0 1px 2px rgba(0,0,0, 0.6), 
@@ -20,4 +20,35 @@
     inset 2px 1px 4px rgba(0,0,0, 0.3), 
     inset 2px 4px 3px rgba(3,0,128, 0.3), 
     inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.btnBox {
+  display: flex;
+
+  /* position: absolute; */
+  /* margin-left: 12.7vw; */
+  /* margin-top: 1vh; */
+}
+
+
+.btn {
+  margin-top: 29%;
+  height: 3vh;
+  border: rgb(35, 36, 42) 1px solid;
+  border-radius: 50%;
+  background-color: rgb(35, 36, 42);
+  color: rgb(110, 111, 115);
+
+}
+
+.btn:hover {
+  border: 1px solid rgb(192, 51, 51);
+  color: white;
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  box-shadow: inset 0 0 6px rgb(192, 51, 51),  0 0 6px rgb(192, 51, 51);
+  background-color: rgb(192, 51, 51);
+}
+
+.btn:active {
+  background-color: none !important;
 }

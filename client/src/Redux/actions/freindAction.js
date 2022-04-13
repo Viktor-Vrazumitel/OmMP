@@ -1,4 +1,4 @@
-import { ADD_FRIEND, DELETE_FRIEND_OUT, DELETE_USER, GET_FRIENDS_USER_BASE } from "../type/type"
+import { ADD_FRIEND, DELETE_FRIEND_OUT, DELETE_USER, DELET_FRIEND, GET_FRIENDS_USER_BASE } from "../type/type"
 
 export const addFriendAction = (user) =>{
     
@@ -22,5 +22,12 @@ export const deleteUser = () => ({
   export const outDeletFriend = () => {
       return{
           type: DELETE_FRIEND_OUT
+      }
+  }
+
+  export const deleteFriendAction = (id) => {
+      return {
+          type: DELET_FRIEND,
+          payload: id
       }
   }

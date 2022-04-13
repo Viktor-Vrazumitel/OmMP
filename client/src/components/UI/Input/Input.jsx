@@ -2,11 +2,10 @@
 import style from './Input.module.css'
 
 
-function MyInput({input,setInput}) {
+function MyInput({input,setInput,holder}) {
 
 const valueHandler=(e)=>{
   setInput(e.target.value)
-  
 }
 
 
@@ -22,7 +21,7 @@ const valueHandler=(e)=>{
         className={style.inputText}
         onChange={valueHandler}
         type="text"
-        placeholder='Найти комнату' 
+        placeholder={holder} 
         value={input} />
     </div>
   );

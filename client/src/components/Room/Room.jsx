@@ -6,14 +6,14 @@ function Room({title,id}) {
 
 const navigate = useNavigate()
 function inRoomHandler(id){
-  navigate('/room')
+  navigate(`/room/${id}`)
 }
 
   return ( 
     <>
     <div className={`card ${style.card}`}>
       <div className="card-body">
-        <h5 className="card-title" onClick={inRoomHandler}>{title}</h5>
+        <h5 className="card-title" onClick={()=>inRoomHandler(id)}>{title}</h5>
         <h6 className="card-subtitle mb-2 text-muted"></h6>
       </div>
     </div>
