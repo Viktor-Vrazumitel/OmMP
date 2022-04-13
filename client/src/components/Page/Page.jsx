@@ -23,7 +23,7 @@ function MainPage() {
 
 const navigate = useNavigate()
 const rooms = useSelector(state=> state.rooms)
-const fiveRoom = rooms.slice(0,6)
+const fiveRoom = rooms.slice(0,5)
 
 
 // function singInHandler(){
