@@ -22,10 +22,13 @@ function MainPage() {
 
 
 const navigate = useNavigate()
-const user = useSelector(state=> state.user)
-function singInHandler(){
-navigate('/signin')
-}
+const rooms = useSelector(state=> state.rooms)
+const fiveRoom = rooms.slice(0,6)
+
+
+// function singInHandler(){
+// navigate('/signin')
+// }
 
 
   return ( 
@@ -47,7 +50,7 @@ navigate('/signin')
              <span className={style.title}>Популярное</span> 
           </div>
             <div className={style.popBox}>
-                <Popular />
+              {fiveRoom&&fiveRoom.map(el=> <Popular  key={el.id} title={el.title || el.name} id={el.id}/>)}
             </div>
         </div>
 
