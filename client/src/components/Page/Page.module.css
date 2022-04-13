@@ -58,6 +58,7 @@
   height: 15vh;
   border-radius: 10px;
   margin: 1%;
+  filter: grayscale(100%);
 }
 
 .betaBlock {

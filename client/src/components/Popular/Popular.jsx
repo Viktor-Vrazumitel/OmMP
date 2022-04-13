@@ -13,7 +13,7 @@ function inRommHandler(id){
 
   return ( 
     <div className={style.divPop} onClick={()=>inRommHandler(id)}>
-{title}
+ <span className={style.fontPop}>{title}</span>
     </div>
    );
 }
