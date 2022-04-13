@@ -37,7 +37,7 @@ console.log(fiveRoom);
       <div className={style.betaBlock}>
         <div >
           <div className={style.titleBox}>
-             <span className={style.title}>Популярное</span> 
+             <span className={style.title}>Новое</span> 
           </div>
             <div className={style.popBox}>
               {fiveRoom&&fiveRoom.map(el=> <Popular  key={el.id} title={el.title || el.name} id={el.id}/>)}
@@ -46,7 +46,7 @@ console.log(fiveRoom);
 
         <div>
           <div className={style.titleBox}>
-            <span className={style.title}>Жанры</span> 
+            <span className={style.titleJ}>Жанры</span> 
           </div>
             <div className={style.janrBox}>
               <img className={style.janr} src={drum} alt="" />

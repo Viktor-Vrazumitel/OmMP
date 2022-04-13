@@ -10,13 +10,19 @@ function inRoomHandler(id){
 }
 
 const rnd = (style)=>{
-  const rand = Math.floor(Math.random()*3 + 1)
+  const rand = Math.floor(Math.random()*6 + 1)
   if(rand === 1)
   return style.card
   if(rand === 2)
   return style.card1
   if(rand === 3)
+  return style.card2
+  if(rand === 4)
   return style.card3
+  if(rand === 5)
+  return style.card4
+  if(rand === 6)
+  return style.card5
 
 }
 console.log(rnd(style));
