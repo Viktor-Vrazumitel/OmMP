@@ -9,6 +9,7 @@ const { Op } = require("sequelize");
 const { User, Room, Friend } = require("./db/models");
 const authRouter = require("./src/routes/auth.router");
 const usersRouter = require("./src/routes/users.router");
+const path = require("path");
 
 const app = express();
 const { PORT, COOKIE_SECRET, COOKIE_NAME } = process.env;
@@ -20,6 +21,7 @@ app.use(
   })
 );
 
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(morgan("dev"));
 app.use(express.json());
 

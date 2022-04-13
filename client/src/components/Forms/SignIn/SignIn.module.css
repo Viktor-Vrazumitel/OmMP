@@ -88,8 +88,8 @@ input.input::-webkit-input-placeholder { color: rgb(110, 111, 115); }
   text-shadow: 0 0 0px transparent;
   transition: .2s;
   -webkit-transition: .2s;
-  padding: 10px;
-  line-height: 40px;
+  padding: 5px;
+  /* line-height: 40px; */
   margin: 0;
   border-radius: 10px;
   cursor: pointer;
