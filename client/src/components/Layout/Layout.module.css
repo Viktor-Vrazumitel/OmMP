@@ -33,7 +33,7 @@
   height: 14.47vh;
   width: 9vw;
   cursor: pointer;
-  margin-left: 10%;
+  margin-left: 23%;
   margin-top: 8%;
   font-family: sans-serif;
   font-size: 2rem;
@@ -115,7 +115,7 @@
   justify-content: center;
   /* margin-left: 10%; */
   font-size: 16px;
-  color: rgb(110, 111, 115);
+  color: rgb(159, 159, 160);
 }
 
 .myRoomLogo {
@@ -148,7 +148,7 @@
   margin: 0;
   border-radius: 10px;
   cursor: pointer;
-  color: rgb(110, 111, 115);
+  color: rgb(159, 159, 160);
   display: flex;
   justify-content: center;
   margin-left: 9%;

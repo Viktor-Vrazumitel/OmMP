@@ -71,6 +71,12 @@
   font-size: 32px;
 }
 
+.titleJ {
+  color: rgb(110, 111, 115);
+  font-size: 32px;
+
+}
+
 .titleBox {
   display: flex;
   justify-content:flex-start;

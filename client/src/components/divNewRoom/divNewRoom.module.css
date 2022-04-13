@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   color: rgb(13, 240, 240);
+  text-shadow: 0 0 4px rgb(255, 255, 255);
   border: 1px ridge;
   background-color: transparent;
   box-shadow: 
