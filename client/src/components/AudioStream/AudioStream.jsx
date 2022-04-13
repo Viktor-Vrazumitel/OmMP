@@ -8,7 +8,7 @@ function AudioStream() {
   width = 10;
 
   function goStream() {
-    if (context) return;
+    if (context) return
     body = document.querySelector("#newid");
 
     body.querySelector("#btn44").remove(); // 
@@ -22,7 +22,7 @@ function AudioStream() {
     }
 
     myElements = document.getElementsByClassName("logo");
-    context = new AudioContext();
+    context = new AudioContext();//
     analyser = context.createAnalyser();
 
     let displayMediaOptions = {

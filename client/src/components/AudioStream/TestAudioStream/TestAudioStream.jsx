@@ -1,4 +1,4 @@
-const container = document.getElementById("container");
+// const container = document.getElementById("container");
 const canvas = document.getElementById("canvas1"); // холст отрисовки (по умолчанию типа 150х150)
 const file = document.getElementById("fileupload");
 
@@ -9,6 +9,7 @@ let audioSource;
 let analyser;
 let audioContext;
 let captureStream;
+
 async function startCapture() {
   const displayMediaOptions = {
     video: {
@@ -20,21 +21,20 @@ async function startCapture() {
       sampleRate: 44100,
     },
   };
-  audioContext = new AudioContext();
-//   console.log(audioContext);
-  // if (audioContext) return;
+
+
+analyser = audioContext.createAnalyser();
+try {
+  audioSource = audioContext.createMediaStreamSource(captureStream);
+} catch (error) {
+  console.log(error.message);
+}
+  audioContext = new AudioContext(); //
+
   captureStream = await navigator.mediaDevices.getDisplayMedia(
     displayMediaOptions
   );
 
-  console.log(captureStream.getAudioTracks());
-
-  analyser = audioContext.createAnalyser();
-  try {
-    audioSource = audioContext.createMediaStreamSource(captureStream);
-  } catch (error) {
-    console.log(error.message);
-  }
   await audioSource.connect(analyser);
   analyser.connect(audioContext.destination); // узел вывода звука на устройство по умолчанию
   analyser.fftSize = 2048; // кол-во сэмплов (и столбиков) (32, 64, 128, 256 и тд)
