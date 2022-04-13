@@ -8,7 +8,7 @@ import {
 
 export const friendReducer = (state = initState, action) => {
   const { type, payload } = action;
-  // console.log('friend',payload);
+
 
   switch (type) {
     case ADD_FRIEND:

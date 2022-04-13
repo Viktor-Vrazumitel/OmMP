@@ -9,9 +9,21 @@ function inRoomHandler(id){
   navigate(`/room/${id}`)
 }
 
+const rnd = (style)=>{
+  const rand = Math.floor(Math.random()*3 + 1)
+  if(rand === 1)
+  return style.card
+  if(rand === 2)
+  return style.card1
+  if(rand === 3)
+  return style.card3
+
+}
+console.log(rnd(style));
+
   return ( 
     <>
-    <div className={`card ${style.card}`}>
+    <div className={`card ${rnd(style)}`}>
       <div className="card-body">
         <h5 className="card-title" onClick={()=>inRoomHandler(id)}>{title}</h5>
         <h6 className="card-subtitle mb-2 text-muted"></h6>

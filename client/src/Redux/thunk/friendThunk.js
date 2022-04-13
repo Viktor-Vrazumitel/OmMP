@@ -17,10 +17,3 @@ export const findBaseUser = (login,userIn) => (dispatch) =>{
             axios.delete(`${URL_BASE}/friend/${id}`)
             .then(res => dispatch(deleteFriendAction(res.data)))
         }
-
-    //     export const findFriendAction = (user)=>{
-    //         return{
-    //             type: FIND_FRIEND,
-    //             payload: user
-    //       }
-    //    }
