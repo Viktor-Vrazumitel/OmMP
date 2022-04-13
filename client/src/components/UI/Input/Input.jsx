@@ -6,7 +6,6 @@ function MyInput({input,setInput,holder}) {
 
 const valueHandler=(e)=>{
   setInput(e.target.value)
-  
 }
 
 

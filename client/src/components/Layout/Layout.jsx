@@ -22,10 +22,7 @@ import { upDateRoom } from "../../Redux/actions/roomAction";
 import { useEffect } from "react";
 import { createRoomAction } from "../../Redux/actions/userRoomAction";
 import DivNewRoomList from "../divNewRoomList/divNewRoomList";
-import logo from '../../img/logo/logo1.svg'
-
-
-
+import logo from "../../img/logo/logo1.svg";
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
@@ -45,8 +42,6 @@ function Layout() {
 
   const navigate = useNavigate();
 
-  
-
   function createRoomHandler(input, userIn) {
     dispatch(createBaseRoom(input, userIn));
     // dispatch(createRoomAction(myRoom,userIn))
@@ -55,27 +50,21 @@ function Layout() {
   return (
     <div className={style.bars}>
       <div className={style.left}>
-
-
         <div className={style.logo}>
-          <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
-
-        </div>
-        
-        <div className={style.myRooms}>
-          <span className={`material-icons ${style.fontRoomLogo}`}>
-             cast 
-          </span>
-          <span className={style.fontRoom}>
-             Моя комната
-          </span>
-          <div className={style.roomlist}>
-              <DivNewRoomList/>
+          <div onClick={() => navigate("/")}>
+            <img src={logo} alt="" />
           </div>
-
         </div>
 
-          {/* {!usRoom.length ? (
+        <div className={style.myRooms}>
+          <span className={`material-icons ${style.fontRoomLogo}`}>cast</span>
+          <span className={style.fontRoom}>Моя комната</span>
+          <div className={style.roomlist}>
+            <DivNewRoomList />
+          </div>
+        </div>
+
+        {/* {!usRoom.length ? (
             <DivNewRoom
               key={myRoom[0]?.id}
               onClick={inHomeHandler}
@@ -85,18 +74,13 @@ function Layout() {
             <></>
           )} */}
 
-
         <div className={style.myFavorite}>
-          <span className={`material-icons ${style.fontRoomLogo}`}>
-            star 
-          </span>
-          <span className={style.fontRoom}>
-            Избранное
-          </span>
+          <span className={`material-icons ${style.fontRoomLogo}`}>star</span>
+          <span className={style.fontRoom}>Избранное</span>
         </div>
 
         <div className={style.createRoom}>
-          {userIn  ? (
+          {userIn ? (
             <CreateRoom
               modal={modal}
               createRoomHandler={createRoomHandler}

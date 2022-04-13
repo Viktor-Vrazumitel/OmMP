@@ -12,6 +12,7 @@ const searchBaseRoom =(title) => {
 function* searchRoom(action) {
    try {
       const room = yield call(searchBaseRoom, action.payload);
+      console.log(action);
       yield put(searchAction(room));
    } catch (e) {
       yield put({type: "USER_FETCH_FAILED", message: e.message});
