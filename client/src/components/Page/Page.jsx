@@ -17,7 +17,8 @@ function MainPage() {
 
 
 const rooms = useSelector(state=> state.rooms)
-const fiveRoom = rooms.slice(0,5)
+const fiveRoom = rooms.slice(-5).reverse()
+console.log(fiveRoom);
 
 
 

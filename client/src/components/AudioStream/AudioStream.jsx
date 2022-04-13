@@ -11,7 +11,7 @@ function AudioStream() {
     if (context) return;
     body = document.querySelector("#newid");
 
-    body.querySelector("#btn44").remove();
+    body.querySelector("#btn44").remove(); // 
 
     for (let i = 0; i < num; i++) {
       logo = document.createElement("div");
@@ -60,7 +60,7 @@ function AudioStream() {
     }
 
   }
-
+//
   return (
     <div id="newid" className={style.musicBox}>
       <canvas id="canvas1"></canvas>
