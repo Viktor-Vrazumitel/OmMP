@@ -25,7 +25,7 @@ if(search.length){
 }
 },[search])
   return (
-    <Splide className={style.carousel} options={ {  width:950, height: 150,  pagination:false, perPage: 6} } aria-label="React Splide Example">
+    <Splide className={style.carousel} options={ {clones: -1, type:'loop', width:950, height: 150,  pagination:false, perPage: 6} } aria-label="React Splide Example">
 
 {status ? search.map(room=> <SplideSlide><Room key={room.id} title={room.title} id={room.id}/></SplideSlide>) : rooms && rooms.map(room => <SplideSlide><Room key={room.id} title={room.title} id={room.id}/></SplideSlide>)}
       {/* <SplideSlide>
