@@ -8,7 +8,7 @@
   height: 100vh;
   background-color: rgb(25, 26, 31);
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -31,6 +31,7 @@
 
 .logo {
   height: 14.47vh;
+  width: 9vw;
   cursor: pointer;
   margin-left: 10%;
   margin-top: 8%;
@@ -110,7 +111,9 @@
 
 .myRooms {
   display: flex;
-  margin-left: 10%;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-left: 10%; */
   font-size: 16px;
   color: rgb(110, 111, 115);
 }
@@ -121,7 +124,8 @@
 
 .myFavorite {
   display: flex;
-  margin-left: 10%;
+  justify-content: center;
+  /* margin-left: 10%; */
   color: rgb(110, 111, 115);
 }
 
@@ -218,6 +222,8 @@ margin-top: 10%;
 .roomlist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 7%;
 }
 
 /* .addIcon {

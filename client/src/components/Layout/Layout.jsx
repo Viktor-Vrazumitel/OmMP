@@ -61,7 +61,7 @@ function Layout() {
           <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
 
         </div>
-
+        
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoomLogo}`}>
              cast 
@@ -69,11 +69,11 @@ function Layout() {
           <span className={style.fontRoom}>
              Моя комната
           </span>
-
-        </div>
           <div className={style.roomlist}>
               <DivNewRoomList/>
           </div>
+
+        </div>
 
           {/* {!usRoom.length ? (
             <DivNewRoom
