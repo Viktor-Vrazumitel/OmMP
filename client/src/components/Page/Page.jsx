@@ -1,13 +1,7 @@
-
-
 import Footer from '../Footer/Footer';
 import MyNavbar from '../Navbar/Navbar';
-
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
-import Room from '../Room/Room';
-import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css';
 import drum from '../../img/music/drum.webp'
 import dj from '../../img/music/dj.webp'
@@ -21,14 +15,10 @@ import { Car } from '../Corousel/Carousel';
 function MainPage() {
 
 
-const navigate = useNavigate()
+
 const rooms = useSelector(state=> state.rooms)
 const fiveRoom = rooms.slice(0,5)
 
-
-// function singInHandler(){
-// navigate('/signin')
-// }
 
 
   return ( 
@@ -41,7 +31,6 @@ const fiveRoom = rooms.slice(0,5)
         <span className={style.title}>Комнаты</span> 
       </div>
       <div className={style.rooms}>
-        {/* <RoomList/> */}
         <Car />
       </div>
       <div className={style.betaBlock}>
