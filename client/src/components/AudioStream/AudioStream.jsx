@@ -74,8 +74,8 @@ function AudioStream() {
   return (
     <div id="newid" className={style.musicBox}>
       <canvas id="canvas1"></canvas>
-      <button className={style.musicBtn} onClick={() => goStream()} id="btn44">
-        Начать трансляцию
+      <button onClick={() => goStream()} id="btn44">
+        giStream
       </button>
     </div>
   );

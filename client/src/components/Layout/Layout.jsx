@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import { createRoomAction } from "../../Redux/actions/userRoomAction";
 import DivNewRoomList from "../divNewRoomList/divNewRoomList";
 import logo from "../../img/logo/logo1.svg";
+import MyMic from "../Mic/Mic";
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
@@ -102,7 +103,8 @@ function Layout() {
 
       <Routes>
         <Route path="/auth/signin" element={<SignIn />} />
-        <Route path="/auth/signup" element={<SignUp />} />
+        {/* <Route path="/auth/signup" element={<SignUp />} /> */}
+        <Route path="/auth/signup" element={<MyMic />} />
         {/* <Route path='/signin' element={<Signin />}/> */}
         <Route path="/" element={<MainPage />} />
         <Route path="/room/:id" element={<MyRoom />} />
