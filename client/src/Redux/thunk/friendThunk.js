@@ -9,8 +9,10 @@ import {
 export const findBaseUser = (login, userIn) => (dispatch) => {
   axios.post(`${URL_BASE}/search`, { login, userIn })
   .then((res) => { 
-    if (res.ok) {
+    if (res.data ) {
+      console.log(res);
       return dispatch(addFriendAction(res.data));
+      
     }else {
      
     return alert("Нет такого пользователя");
