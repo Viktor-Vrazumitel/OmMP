@@ -45,6 +45,7 @@ const fiveRoom = rooms.slice(-5).reverse()
         <div>
           <div className={style.titleBox}>
             <span className={style.titleJ}>Жанры</span> 
+            <span className={`material-icons ${style.titleLock}`}>lock</span>
           </div>
             <div className={style.janrBox}>
               <img className={style.janr} src={drum} alt="" />

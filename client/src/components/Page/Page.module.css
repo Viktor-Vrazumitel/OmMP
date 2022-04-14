@@ -74,7 +74,12 @@
 .titleJ {
   color: rgb(110, 111, 115);
   font-size: 32px;
+}
 
+.titleLock {
+  color: rgb(110, 111, 115);
+  font-size: 32px;
+  margin-top: 8px;
 }
 
 .titleBox {
