@@ -3,8 +3,10 @@ export const initState = {
   rooms: [],
   myFriend: [],
   search: [],
+  allUser : [],
   user: null,
   loader: false
+  
 };
 
 const getInitState = () => {

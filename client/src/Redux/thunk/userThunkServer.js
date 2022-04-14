@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { URL_BASE } from '../../config'
 import { addRoom, upDateRoom} from '../actions/roomAction'
+import { setAllUserBase } from '../actions/userAction'
 import { createRoomAction, deleteUserRoom, inUserRoomAction } from '../actions/userRoomAction'
 
 
@@ -37,5 +38,8 @@ export const deleteBaseRoomUser = (id) => (dispatch)=>{
 }
 
 
-
+export const getAllUserBase = () => (dispatch)=>{
+    axios.get(`${URL_BASE}/allUsers`)
+    .then(res=>dispatch(setAllUserBase(res.data)))
+}
 

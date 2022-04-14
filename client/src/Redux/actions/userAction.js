@@ -1,10 +1,11 @@
-import {  DELETE_FRIEND_OUT, DELETE_USER, FIND_FRIEND, SET_USER} from "../type/type"
+import { SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
 import {  outUserRoomAction } from "./userRoomAction";
 import {  inUserBaseRoom } from "../thunk/userThunkServer";
 import { deleteUser, outDeletFriend } from "./freindAction";
 import { findBaseFriendUser } from "../thunk/friendThunk";
+import { SET_ALL_USER } from "../type/userTypes";
 
 
 
@@ -14,6 +15,16 @@ export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
+
+export const setAllUserBase = (users) => {
+  return {
+    type: SET_ALL_USER,
+    payload: users
+  }
+}
+
+
+
 
 
 

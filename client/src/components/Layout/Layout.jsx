@@ -12,15 +12,11 @@ import SignOut from "../Forms/SignOut/SignOut";
 import PrivateRoute from "../PrivateRouter/PrivateRouter";
 import { findBaseUser } from "../../Redux/thunk/friendThunk";
 import {
-  allBaseRoom,
   createBaseRoom,
-  upDateBaseRoom,
+  getAllUserBase,
 } from "../../Redux/thunk/userThunkServer";
-import DivNewRoom from "../divNewRoom/divNewRoom";
 import CreateRoom from "../CreateRoom/CreateRoom";
-import { upDateRoom } from "../../Redux/actions/roomAction";
 import { useEffect } from "react";
-import { createRoomAction } from "../../Redux/actions/userRoomAction";
 import DivNewRoomList from "../divNewRoomList/divNewRoomList";
 import logo from "../../img/logo/logo1.svg";
 
@@ -34,8 +30,6 @@ function Layout() {
   M.AutoInit();
   const dispatch = useDispatch();
   const userIn = useSelector((state) => state.user);
-  const myRoom = useSelector((state) => state.rooms);
-  const usRoom = useSelector((state) => state.userRoom);
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
   }
@@ -45,6 +39,10 @@ function Layout() {
   function createRoomHandler(input, userIn) {
     dispatch(createBaseRoom(input, userIn));
   }
+
+  useEffect(() => {
+    dispatch(getAllUserBase());
+  }, [dispatch]);
 
   return (
     <div className={style.bars}>
@@ -62,16 +60,6 @@ function Layout() {
             <DivNewRoomList />
           </div>
         </div>
-
-        {/* {!usRoom.length ? (
-            <DivNewRoom
-              key={myRoom[0]?.id}
-              onClick={inHomeHandler}
-              title={myRoom[0]?.title}
-            />
-          ) : (
-            <></>
-          )} */}
 
         <div className={style.myFavorite}>
           <span className={`material-icons ${style.fontRoomLogo}`}>star</span>

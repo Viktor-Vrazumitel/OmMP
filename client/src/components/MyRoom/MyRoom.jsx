@@ -13,6 +13,8 @@ function MyRoom() {
   const userIn = useSelector((state) => state.user);
   const rooms = useSelector((state) => state.rooms);
   const inRoom = rooms.filter((el) => el.id === +id);
+  const allUser = useSelector((state) => state.allUser);
+  const userRoomName = allUser.filter((el) => el.id === inRoom[0].user_id);
 
   useEffect(() => {
     if (userIn?.id === inRoom[0]?.user_id) {
@@ -24,6 +26,7 @@ function MyRoom() {
 
   return (
     <div className={style.main}>
+      <div>{userRoomName[0].login}</div>
       <MyNavbar />
       <div className={style.pic}>{status ? <></> : <AudioStream />}</div>
       <div className={style.chat}>

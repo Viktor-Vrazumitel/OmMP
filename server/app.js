@@ -64,6 +64,11 @@ app.get("/search/:title", async (req, res) => {
   res.json(room);
 });
 
+app.get("/allUsers", async (req, res) => {
+  const allUsers = await User.findAll();
+  res.json(allUsers);
+});
+
 app.get("/room", async (req, res) => {
   const rooms = await Room.findAll();
   res.json(rooms);
@@ -80,6 +85,7 @@ app.post("/room", async (req, res) => {
   const rooms = await Room.findOne({ where: { title } });
   if (!rooms) {
     const room = await Room.create({ title, user_id });
+    console.log(room);
     return res.json(room);
   } else {
     res.json(Error);
