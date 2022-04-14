@@ -4,6 +4,7 @@ export const initState = {
   myFriend: [],
   search: [],
   allUser : [],
+  error: '',
   user: null,
   loader: false
   
