@@ -8,16 +8,19 @@ function ChatWindow() {
   const socket = useRef();
   const [connected, setConnected] = useState(false);
   const [username, setUsername] = useState("");
+const [state, setState] = useState(false)
 
+console.log(messages);
   function connect() {
-    socket.current = new WebSocket("ws://localhost:5000");
+    socket.current = new WebSocket("ws://localhost:5001");
     socket.current.onopen = () => {
       setConnected(true);
       const message = {
-        event: "connection",
-        username,
+        event: 'connection',
+        username: username,
         id: Date.now(),
       };
+      setMessage((prev) => [message, ...prev]);
       socket.current.send(JSON.stringify(message));
     };
     socket.current.onmessage = (event) => {
@@ -66,7 +69,7 @@ function ChatWindow() {
         <div className={style.messages}>
           {messages.map((mess) => (
             <div key={mess.id}>
-              {mess.event == "connection" ? (
+              {mess.event === "connection" ? (
                 <div className={style.messages}>
                   Пользователь {mess.username} входит в чат
                 </div>
