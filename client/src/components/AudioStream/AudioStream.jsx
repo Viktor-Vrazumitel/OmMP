@@ -1,4 +1,3 @@
-import { useState } from "react";
 import style from "./AudioStream.module.css";
 
 function AudioStream() {
@@ -18,7 +17,6 @@ function AudioStream() {
   array = new Uint8Array(num * 2);
   width = 4.8;
 
-  const [music, setMusic] = useState("");
 
   async function goStream() {
     if (context) return;
@@ -50,16 +48,12 @@ function AudioStream() {
     };
 
     stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-    // console.log(stream, stream.getAudioTracks());
     src = context.createMediaStreamSource(stream);
     src.connect(analyser);
     loop();
 
-    const mStrm = stream.getTracks()[0];
-    export {mStrm}
-    setMusic(mStrm);
+    // const mStrm = stream.getTracks()[0];
 
-    console.log(music);
 
     function loop() {
       window.requestAnimationFrame(loop);
