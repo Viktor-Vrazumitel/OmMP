@@ -3,9 +3,9 @@ import style from "./AudioStream.module.css";
 function AudioStream() {
   let body, num, array, width, context, logo, myElements, analyser, src, height;
 
-  num = 32;
+  num = 256;
   array = new Uint8Array(num * 2);
-  width = 38;
+  width = 4.8;
 
   function goStream() {
     if (context) return
