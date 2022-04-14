@@ -60,8 +60,10 @@ const fiveRoom = rooms.slice(-5).reverse()
 
 
 
-    
+    <div className={style.footer}>
+
     <Footer />
+    </div>
     </div>
     </>
    );

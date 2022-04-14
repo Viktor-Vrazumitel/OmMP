@@ -26,7 +26,13 @@ function MyRoom() {
 
   return (
     <div className={style.main}>
-      <div>{userRoomName[0].login}</div>
+      <div className={style.logoBox}>
+          <div className={style.userRoom}>{userRoomName[0].login}</div>
+          <span class={`material-icons ${style.logoRec}`}>
+    record_voice_over
+    </span>
+
+      </div>
       <MyNavbar />
       <div className={style.pic}>{status ? <></> : <AudioStream />}</div>
       <div className={style.chat}>
