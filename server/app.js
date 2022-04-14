@@ -52,18 +52,21 @@ app.get("/", (req, res) => {
 app.post("/search", async (req, res) => {
   const { login, userIn } = req.body;
   const user = await User.findOne({ where: { login } });
-  if(user){
-  const friend = await Friend.create({name:login, user_id:userIn.id})
-  res.json(friend);
+
+  if (!user ) {
+    return res.json(null);
   }
-  else{
-    res.json(null)
-  }
+
+  const friend = await Friend.create({ name: login, user_id: userIn.id });
+
+  return res.json(friend);
 });
 
 app.get("/search/:title", async (req, res) => {
-  const {title} = req.params
-  const room = await Room.findAll({ where: { title:{[Op.startsWith]:`${title}%`} } });
+  const { title } = req.params;
+  const room = await Room.findAll({
+    where: { title: { [Op.startsWith]: `${title}%` } },
+  });
   res.json(room);
 });
 
@@ -78,8 +81,8 @@ app.get("/room", async (req, res) => {
 });
 
 app.delete("/room/:id", async (req, res) => {
-const {id} = req.params
-  const deletRoom = await Room.destroy({where:{id:+req.params.id}})
+  const { id } = req.params;
+  const deletRoom = await Room.destroy({ where: { id: +req.params.id } });
   res.json(id);
 });
 
@@ -93,7 +96,6 @@ app.post("/room", async (req, res) => {
   } else {
     res.json(Error);
   }
-
 });
 
 app.post("/userRoom", async (req, res) => {
@@ -109,7 +111,7 @@ app.post("/friend", async (req, res) => {
 });
 
 app.delete("/friend/:id", async (req, res) => {
-  const {id} = req.params
+  const { id } = req.params;
   const friends = await Friend.destroy({
     where: { id: +req.params.id },
   });
