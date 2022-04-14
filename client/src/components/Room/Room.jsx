@@ -25,7 +25,7 @@ const rnd = (style)=>{
   return style.card5
 
 }
-console.log(rnd(style));
+
 
   return ( 
     <>

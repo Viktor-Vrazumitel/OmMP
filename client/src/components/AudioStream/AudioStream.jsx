@@ -8,10 +8,10 @@ function AudioStream() {
   width = 4.8;
 
   function goStream() {
-    if (context) return
+    if (context) return;
     body = document.querySelector("#newid");
 
-    body.querySelector("#btn44").remove(); // 
+    body.querySelector("#btn44").remove(); 
 
     for (let i = 0; i < num; i++) {
       logo = document.createElement("div");
@@ -22,7 +22,7 @@ function AudioStream() {
     }
 
     myElements = document.getElementsByClassName("logo");
-    context = new AudioContext();//
+    context = new AudioContext();
     analyser = context.createAnalyser();
 
     let displayMediaOptions = {
@@ -60,7 +60,7 @@ function AudioStream() {
     }
 
   }
-//
+
   return (
     <div id="newid" className={style.musicBox}>
       <canvas id="canvas1"></canvas>

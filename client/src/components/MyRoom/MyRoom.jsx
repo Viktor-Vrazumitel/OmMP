@@ -32,6 +32,7 @@ function MyRoom() {
       <div className={style.chat}>
         <ChatWindow />
       </div>
+      
       <Footer />
     </div>
   );
