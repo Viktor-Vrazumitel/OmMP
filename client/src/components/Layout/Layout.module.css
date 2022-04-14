@@ -151,7 +151,7 @@
   color: rgb(159, 159, 160);
   display: flex;
   justify-content: center;
-  margin-left: 9%;
+  /* margin-left: 9%; */
   cursor: pointer;
 }
 .createRoom:hover {

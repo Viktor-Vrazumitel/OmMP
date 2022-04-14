@@ -66,6 +66,7 @@ function ChatWindow() {
         <div className={style.messages}>
           {messages.map((mess) => (
             <div key={mess.id}>
+
               {mess.event === "connection" ? (
                 <div className={style.messages}>
                   Пользователь {mess.username} подключился
