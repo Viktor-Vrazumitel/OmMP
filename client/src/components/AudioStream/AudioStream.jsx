@@ -5,7 +5,7 @@ function AudioStream() {
 
   num = 32;
   array = new Uint8Array(num * 2);
-  width = 10;
+  width = 38;
 
   function goStream() {
     if (context) return;
@@ -16,7 +16,7 @@ function AudioStream() {
     for (let i = 0; i < num; i++) {
       logo = document.createElement("div");
       logo.className = "logo";
-      logo.style.background = "red";
+      logo.style.background = "#8212eb";
       logo.style.minWidth = width + "px";
       body.appendChild(logo);
     }

@@ -2,7 +2,7 @@
   margin: 0;
   background-color: rgb(27, 28, 34);
   height: 25vh;
-  width: 77.4vw;
+  width: 73vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,9 +42,9 @@
   left: 0;
   width: 100%;
   height: 100%; */
-  /* filter: blur(3px) contrast(10) */
-  /* filter: contrast(10); */
-  /* filter: blur(1px); */
+  /* filter: blur(3px) contrast(10);
+  filter: contrast(10);
+  filter: blur(1px); */
 }
 /* размытие и контраст на 20 строке */
 
@@ -82,3 +82,8 @@
   text-shadow: 0 0 4px rgb(255, 255, 255);
   box-shadow: inset 0 0 6px rgb(8, 200, 40),  0 0 6px rgb(8, 200, 40);
 }
+
+
+ .logo {
+   background: #8212eb
+ }
