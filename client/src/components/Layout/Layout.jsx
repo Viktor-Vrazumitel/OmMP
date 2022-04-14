@@ -57,7 +57,7 @@ function Layout() {
 
         <div className={style.myRooms}>
           <span className={`material-icons ${style.fontRoomLogo}`}>cast</span>
-          <span className={style.fontRoom}>Моя комната</span>
+          <span className={style.fontRoom}>Мои комнаты</span>
           <div className={style.roomlist}>
             <DivNewRoomList />
           </div>
@@ -76,6 +76,8 @@ function Layout() {
         <div className={style.myFavorite}>
           <span className={`material-icons ${style.fontRoomLogo}`}>star</span>
           <span className={style.fontRoom}>Избранное</span>
+          <span className={`material-icons ${style.fontLockLogo}`}>lock</span>
+
         </div>
 
         <div className={style.createRoom}>

@@ -137,6 +137,13 @@
   font-size: 26px;
   margin-right: 5px;
 }
+.fontLockLogo {
+  font-size: 22px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+
 
 .createRoom {
   box-shadow: none;
