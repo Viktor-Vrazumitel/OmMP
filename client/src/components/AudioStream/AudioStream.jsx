@@ -3,20 +3,20 @@ import style from "./AudioStream.module.css";
 function AudioStream() {
   let body, num, array, width, context, logo, myElements, analyser, src, height;
 
-  num = 32;
+  num = 256;
   array = new Uint8Array(num * 2);
-  width = 10;
+  width = 4.8;
 
   function goStream() {
     if (context) return;
     body = document.querySelector("#newid");
 
-    body.querySelector("#btn44").remove();
+    body.querySelector("#btn44").remove(); 
 
     for (let i = 0; i < num; i++) {
       logo = document.createElement("div");
       logo.className = "logo";
-      logo.style.background = "red";
+      logo.style.background = "#8212eb";
       logo.style.minWidth = width + "px";
       body.appendChild(logo);
     }

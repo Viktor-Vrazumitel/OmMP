@@ -12,18 +12,13 @@ import SignOut from "../Forms/SignOut/SignOut";
 import PrivateRoute from "../PrivateRouter/PrivateRouter";
 import { findBaseUser } from "../../Redux/thunk/friendThunk";
 import {
-  allBaseRoom,
   createBaseRoom,
-  upDateBaseRoom,
+  getAllUserBase,
 } from "../../Redux/thunk/userThunkServer";
-import DivNewRoom from "../divNewRoom/divNewRoom";
 import CreateRoom from "../CreateRoom/CreateRoom";
-import { upDateRoom } from "../../Redux/actions/roomAction";
 import { useEffect } from "react";
-import { createRoomAction } from "../../Redux/actions/userRoomAction";
 import DivNewRoomList from "../divNewRoomList/divNewRoomList";
-import logo from '../../img/logo/logo1.svg'
-
+import logo from "../../img/logo/logo1.svg";
 
 function modal(clazz) {
   const elems = document.querySelector(clazz);
@@ -35,64 +30,46 @@ function Layout() {
   M.AutoInit();
   const dispatch = useDispatch();
   const userIn = useSelector((state) => state.user);
-  const myRoom = useSelector((state) => state.rooms);
-  const usRoom = useSelector((state) => state.userRoom);
   function findUser(input) {
     dispatch(findBaseUser(input, userIn));
   }
 
   const navigate = useNavigate();
 
-  
-
   function createRoomHandler(input, userIn) {
     dispatch(createBaseRoom(input, userIn));
-    // dispatch(createRoomAction(myRoom,userIn))
   }
+
+  useEffect(() => {
+    dispatch(getAllUserBase());
+  }, [dispatch]);
 
   return (
     <div className={style.bars}>
       <div className={style.left}>
-
-
         <div className={style.logo}>
-          <div onClick={()=>navigate('/')}><img src={logo} alt="" /></div>
-
+          <div onClick={() => navigate("/")}>
+            <img src={logo} alt="" />
+          </div>
         </div>
 
         <div className={style.myRooms}>
-          <span className={`material-icons ${style.fontRoom}`}>
-            cast Моя комната
-          </span>
-
-          <DivNewRoomList/>
-          {/* {!usRoom.length ? (
-            <DivNewRoom
-              key={myRoom[0]?.id}
-              onClick={inHomeHandler}
-              title={myRoom[0]?.title}
-            />
-          ) : (
-            <></>
-          )} */}
-
-          <div className={style.fakeRoom}></div>
-          <div className={style.fakeRoom}></div>
+          <span className={`material-icons ${style.fontRoomLogo}`}>cast</span>
+          <span className={style.fontRoom}>Мои комнаты</span>
+          <div className={style.roomlist}>
+            <DivNewRoomList />
+          </div>
         </div>
 
         <div className={style.myFavorite}>
-          <span className={`material-icons ${style.fontRoom}`}>
-            star Избранное
-          </span>
-          <div className={style.fakeRoom}>1</div>
-          <div className={style.fakeRoom}>2</div>
-          <div className={style.fakeRoom}>3</div>
-          <div className={style.fakeRoom}>4</div>
-          <div className={style.fakeRoom}>5</div>
+          <span className={`material-icons ${style.fontRoomLogo}`}>star</span>
+          <span className={style.fontRoom}>Избранное</span>
+          <span className={`material-icons ${style.fontLockLogo}`}>lock</span>
+
         </div>
 
         <div className={style.createRoom}>
-          {userIn  ? (
+          {userIn ? (
             <CreateRoom
               modal={modal}
               createRoomHandler={createRoomHandler}
@@ -105,9 +82,9 @@ function Layout() {
 
         <div>
           <div className={style.btnBlock}>
-            <div className={`material-icons ${style.headset}`}>mic</div>
+            <div className={`material-icons ${style.mic}`}>mic</div>
             <div className={`material-icons ${style.headset}`}>headphones</div>
-            <div className={`material-icons ${style.headset}`}>settings</div>
+            <div className={`material-icons ${style.settings}`}>settings</div>
           </div>
         </div>
       </div>
@@ -117,7 +94,7 @@ function Layout() {
         <Route path="/auth/signup" element={<SignUp />} />
         {/* <Route path='/signin' element={<Signin />}/> */}
         <Route path="/" element={<MainPage />} />
-        <Route path="/room" element={<MyRoom />} />
+        <Route path="/room/:id" element={<MyRoom />} />
         <Route
           path="/auth/signout"
           element={

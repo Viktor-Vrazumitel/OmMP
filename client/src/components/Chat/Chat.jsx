@@ -8,16 +8,19 @@ function ChatWindow() {
   const socket = useRef();
   const [connected, setConnected] = useState(false);
   const [username, setUsername] = useState("");
+const [state, setState] = useState(false)
 
+console.log(messages);
   function connect() {
-    socket.current = new WebSocket("ws://localhost:5000");
+    socket.current = new WebSocket("ws://localhost:5001");
     socket.current.onopen = () => {
       setConnected(true);
       const message = {
-        event: "connection",
-        username,
+        event: 'connection',
+        username: username,
         id: Date.now(),
       };
+      setMessage((prev) => [message, ...prev]);
       socket.current.send(JSON.stringify(message));
     };
     socket.current.onmessage = (event) => {
@@ -68,7 +71,7 @@ function ChatWindow() {
             <div key={mess.id}>
               {mess.event === "connection" ? (
                 <div className={style.messages}>
-                  Пользователь {mess.username} подключился
+                  Пользователь {mess.username} входит в чат
                 </div>
               ) : (
                 <div className={style.messages}>
@@ -78,6 +81,7 @@ function ChatWindow() {
                     </div>
                     <div className={style.messageStyle}>
                     {mess.message}
+                    
                     </div>
                   </div>
                 </div>
@@ -94,7 +98,7 @@ function ChatWindow() {
             type="text"
             
           />
-          <button className={style.sendBtn} onClick={sendMessage}><span className='material-icons'>send</span></button>
+          <button className={`grey darken-4 ${style.sendBtn} `} onClick={sendMessage}><span className='material-icons'>send</span></button>
         </div>
       </div>
     </div>

@@ -1,29 +1,240 @@
 .card {
-  margin: 1%;
+
   width: 8vw;
   height: 14vh;
   cursor: pointer;
   color: rgb(156, 249, 69);
-  border: 2px solid;
-  border-radius: 12px;
+
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
   background-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/1.png');
+  background-size: cover;
+}
+
+.card:hover {
   box-shadow: 
-    0 1px 2px rgba(0,0,0, 0.6), 
-    2px 1px 4px rgba(0,0,0, 0.3), 
-    2px 4px 3px rgba(3,0,128, 0.3), 
-    0 0 7px 2px rgba(0,208,255, 0.6), 
-    inset 0 1px 2px rgba(0,0,0, 0.6), 
-    inset 2px 1px 4px rgba(0,0,0, 0.3), 
-    inset 2px 4px 3px rgba(3,0,128, 0.3), 
-    inset 0 0 7px 2px rgba(0,208,255, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card1:hover {
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card2:hover {
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card3:hover {
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card4:hover {
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card5:hover {
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+}
+
+.card1 {
+  /* margin: 1%; */
+  width: 8vw;
+  height: 14vh;
+  cursor: pointer;
+  color: rgb(156, 249, 69);
+  /* border: 1px solid; */
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  /* box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/2.png');
+  background-size: cover;
+}
+.card3 {
+  /* margin: 1%; */
+  width: 8vw;
+  height: 14vh;
+  cursor: pointer;
+  color: rgb(156, 249, 69);
+  /* border: 1px solid; */
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  /* box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/3.png');
+  background-size: cover;
+}
+
+.card2 {
+
+  width: 8vw;
+  height: 14vh;
+  cursor: pointer;
+  color: rgb(156, 249, 69);
+
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  /* box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/4.png');
+  background-size: cover;
+}
+.card4 {
+  /* margin: 1%; */
+  width: 8vw;
+  height: 14vh;
+  cursor: pointer;
+  color: rgb(156, 249, 69);
+  /* border: 1px solid; */
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  /* box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/5.png');
+  background-size: cover;
+}
+.card5 {
+  /* margin: 1%; */
+  width: 8vw;
+  height: 14vh;
+  cursor: pointer;
+  color: rgb(156, 249, 69);
+  /* border: 1px solid; */
+  border: 1px ridge rgb(0,208,255);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  /* box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../img/rooms/6.png');
+  background-size: cover;
 }
 
 
 h5 {
   font-size: 20px !important;  
+  /* border: 2px solid rgb(74, 81, 246); */
+  padding: 2px;
+  border-radius: 10px;
+  color: rgb(248, 247, 248);
+  box-shadow: inset 0 0 6px rgb(157, 0, 248),  0 0 6px rgb(157, 0, 248);
+  background-color: rgba(157, 0, 248, 0.527);
+}
+
+h5:hover {
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+
 }
 
 

@@ -8,7 +8,7 @@ function ModalTest({ funcHandler, userIn }) {
     <div id="modal2" className={`modal ${style.body}`}>
       <div className="modal-content">
         <h4>Создать комнату</h4>
-        <MyInput input={input} setInput={setInput} holder='Найти'/>
+        <MyInput input={input} setInput={setInput} holder='Название комнаты'/>
       </div>
       <div className={`modal-footer ${style.modalFooter}`}>
         <button

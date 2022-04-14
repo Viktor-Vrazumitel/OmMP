@@ -6,9 +6,8 @@ function MyInput({input,setInput,holder}) {
 
 const valueHandler=(e)=>{
   setInput(e.target.value)
-  
 }
-console.log(holder);
+
 
   return (  
     <div className={style.input}>

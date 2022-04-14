@@ -2,8 +2,12 @@ export const initState = {
   userRoom: [],
   rooms: [],
   myFriend: [],
+  search: [],
+  allUser : [],
+  error: '',
   user: null,
   loader: false
+  
 };
 
 const getInitState = () => {
@@ -11,5 +15,4 @@ const getInitState = () => {
   return stateFromLS || initState;
 
 };
-//  
 export default getInitState;

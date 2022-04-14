@@ -1,30 +1,23 @@
-
-
 import Footer from '../Footer/Footer';
 import MyNavbar from '../Navbar/Navbar';
-
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-
-import Room from '../Room/Room';
-import RoomList from '../RoomList/RoomList';
 import style from './Page.module.css';
 import drum from '../../img/music/drum.webp'
 import dj from '../../img/music/dj.webp'
 import plastinka from '../../img/music/plastinka.webp'
 import synt from '../../img/music/synt.webp'
 import Popular from '../Popular/Popular';
+import { Car } from '../Corousel/Carousel';
 
 
 
 function MainPage() {
 
 
-const navigate = useNavigate()
-const user = useSelector(state=> state.user)
-function singInHandler(){
-navigate('/signin')
-}
+
+const rooms = useSelector(state=> state.rooms)
+const fiveRoom = rooms.slice(-5).reverse()
+
 
 
   return ( 
@@ -37,21 +30,22 @@ navigate('/signin')
         <span className={style.title}>Комнаты</span> 
       </div>
       <div className={style.rooms}>
-        <RoomList/>
+        <Car />
       </div>
       <div className={style.betaBlock}>
         <div >
           <div className={style.titleBox}>
-             <span className={style.title}>Популярное</span> 
+             <span className={style.title}>Новое</span> 
           </div>
             <div className={style.popBox}>
-                <Popular />
+              {fiveRoom&&fiveRoom.map(el=> <Popular  key={el.id} title={el.title || el.name} id={el.id}/>)}
             </div>
         </div>
 
         <div>
           <div className={style.titleBox}>
-            <span className={style.title}>Жанры</span> 
+            <span className={style.titleJ}>Жанры</span> 
+            <span className={`material-icons ${style.titleLock}`}>lock</span>
           </div>
             <div className={style.janrBox}>
               <img className={style.janr} src={drum} alt="" />
@@ -66,8 +60,10 @@ navigate('/signin')
 
 
 
-    
+    <div className={style.footer}>
+
     <Footer />
+    </div>
     </div>
     </>
    );

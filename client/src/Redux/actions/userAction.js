@@ -1,10 +1,11 @@
-import {  DELETE_FRIEND_OUT, DELETE_USER, FIND_FRIEND, SET_USER} from "../type/type"
+import { SET_USER} from "../type/type"
 import * as endPoints from '../../routConfig/endPoints';
 import { disableLoader, enableLoader } from './loaderAction';
 import {  outUserRoomAction } from "./userRoomAction";
 import {  inUserBaseRoom } from "../thunk/userThunkServer";
 import { deleteUser, outDeletFriend } from "./freindAction";
 import { findBaseFriendUser } from "../thunk/friendThunk";
+import { SET_ALL_USER } from "../type/userTypes";
 
 
 
@@ -14,6 +15,16 @@ export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
+
+export const setAllUserBase = (users) => {
+  return {
+    type: SET_ALL_USER,
+    payload: users
+  }
+}
+
+
+
 
 
 
@@ -46,6 +57,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     
     navigate('/');
   } else {
+    alert('Такой пользователь уже зарегистрирован')
     navigate('/auth/signup');
   }
   dispatch(disableLoader());
@@ -68,6 +80,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
     dispatch(findBaseFriendUser(user))
     navigate(from);
   } else {
+    alert('Ошибка ввода')
     navigate('/auth/signin');
   }
   dispatch(disableLoader());
@@ -96,31 +109,4 @@ export const checkAuth = () => async (dispatch) => {
   }
 };
 
-// export const editUser = (user, navigate) => async (dispatch, getState) => {
-//   const {
-//     user: { id: userId },
-//   } = getState();
-//   dispatch(enableLoader());
-//   const response = await fetch(endPoints.editUser(userId), {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     credentials: 'include',
-//     body: JSON.stringify(user),
-//   });
-//   if (response.status === 200) {
-//     const userData = await response.json();
-//     dispatch(setUser(userData));
-//     navigate(`/users/${userData.id}`);
-//   } else {
-//     navigate.replace('/');
-//   }
-//   dispatch(disableLoader());
-// };
-// export const findFriendAction = (user)=>{
-//     return{
-//         type: FIND_FRIEND,
-//         payload: user
-//     }
-// }
+

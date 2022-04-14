@@ -2,6 +2,43 @@
   background-color: rgb(37, 38, 44);
   width: 30vw;
   height: 5.5vh;
-  border-radius: 10px;
   margin: 1%;
+  cursor: pointer;
+  color: rgb(248, 247, 248);
+  border-radius: 10px;
+  border: 1px ridge rgb(0,208,255);
+
+  /* background-color: transparent;
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6); */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-image: url('../../img/music/bg1.jpeg'); */
+  background-size: cover;
+}
+
+.divPop:hover {
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+  box-shadow: 
+  0 1px 2px rgba(0,0,0, 0.6), 
+  2px 1px 4px rgba(0,0,0, 0.3), 
+  2px 4px 3px rgba(3,0,128, 0.3), 
+  0 0 7px 2px rgba(0,208,255, 0.6), 
+  inset 0 1px 2px rgba(0,0,0, 0.6), 
+  inset 2px 1px 4px rgba(0,0,0, 0.3), 
+  inset 2px 4px 3px rgba(3,0,128, 0.3), 
+  inset 0 0 7px 2px rgba(0,208,255, 0.6);
+
+}
+
+.fontPop {
+  margin-left: 5%;
 }
