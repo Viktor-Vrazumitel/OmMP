@@ -1,13 +1,26 @@
+import { useState } from "react";
 import style from "./AudioStream.module.css";
 
 function AudioStream() {
-  let body, num, array, width, context, logo, myElements, analyser, src, height;
+  let body,
+    num,
+    array,
+    width,
+    context,
+    logo,
+    myElements,
+    analyser,
+    src,
+    height,
+    stream;
 
   num = 32;
   array = new Uint8Array(num * 2);
   width = 10;
 
-  function goStream() {
+  const [music, setMusic] = useState("");
+
+  async function goStream() {
     if (context) return;
     body = document.querySelector("#newid");
 
@@ -36,18 +49,17 @@ function AudioStream() {
       },
     };
 
-    navigator.mediaDevices
-      .getDisplayMedia(displayMediaOptions)
-      .then((stream) => {
-        // console.log(stream, stream.getAudioTracks());
-        src = context.createMediaStreamSource(stream);
-        console.log(stream);
-        src.connect(analyser);
-        loop();
-      })
-      .catch((error) => {
-        alert(error + "\r\n Отклонено. Страница будет не обновлена!");
-      });
+    stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+    // console.log(stream, stream.getAudioTracks());
+    src = context.createMediaStreamSource(stream);
+    src.connect(analyser);
+    loop();
+
+    const mStrm = stream.getTracks()[0];
+    export {mStrm}
+    setMusic(mStrm);
+
+    console.log(music);
 
     function loop() {
       window.requestAnimationFrame(loop);
@@ -58,7 +70,6 @@ function AudioStream() {
         myElements[i].style.opacity = 0.008 * height;
       }
     }
-
   }
 
   return (

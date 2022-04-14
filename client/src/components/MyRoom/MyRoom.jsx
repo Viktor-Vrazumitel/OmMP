@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import AudioStream from "../AudioStream/AudioStream";
 import ChatWindow from "../Chat/Chat";
 import Footer from "../Footer/Footer";
+import MyMic from "../MyMic/MyMic";
 import MyNavbar from "../Navbar/Navbar";
 import style from "./MyRoom.module.css";
 
@@ -26,6 +27,7 @@ function MyRoom() {
     <div className={style.main}>
       <MyNavbar />
       <div className={style.pic}>{status ? <></> : <AudioStream />}</div>
+      {/* < MyMic /> */}
       <div className={style.chat}>
         <ChatWindow />
       </div>
