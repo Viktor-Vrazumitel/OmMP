@@ -11,7 +11,6 @@ export function Car() {
     const search = useSelector(state => state.search)
     const dispatch = useDispatch()
     const [status,setStatus] = useState(false)
-console.log(status);
 useEffect(()=>{
     dispatch(allBaseRoom())
 },[dispatch])

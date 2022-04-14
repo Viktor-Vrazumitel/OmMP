@@ -51,15 +51,13 @@ app.get("/", (req, res) => {
 
 app.post("/search", async (req, res) => {
   const { login, userIn } = req.body;
- 
- 
   const user = await User.findOne({ where: { login } });
   if(user){
   const friend = await Friend.create({name:login, user_id:userIn.id})
   res.json(friend);
   }
   else{
-    res.sendStatus(500)
+    res.json(null)
   }
 });
 

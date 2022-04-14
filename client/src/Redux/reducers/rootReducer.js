@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { allUserReducer } from "./allUserReducer";
 import createUserReducer from "./createUserReducer";
+import { errorReducer } from "./errorReducer";
 import { friendReducer } from "./friendReducer";
 import loaderReducer from "./loaderReducer";
 import { roomReducer } from "./roomReducer";
@@ -15,5 +16,6 @@ export const rootReducer = combineReducers({
     user: createUserReducer,
     loader: loaderReducer,
     search: searchReducer,
-    allUser : allUserReducer
+    allUser : allUserReducer,
+    error: errorReducer
 })

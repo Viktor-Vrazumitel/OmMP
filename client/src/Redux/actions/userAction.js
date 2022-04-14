@@ -57,6 +57,7 @@ export const signUp = (payload, navigate) => async (dispatch) => {
     
     navigate('/');
   } else {
+    alert('Такой пользователь уже зарегистрирован')
     navigate('/auth/signup');
   }
   dispatch(disableLoader());
@@ -79,6 +80,7 @@ export const signIn = (payload, navigate, from) => async (dispatch) => {
     dispatch(findBaseFriendUser(user))
     navigate(from);
   } else {
+    alert('Ошибка ввода')
     navigate('/auth/signin');
   }
   dispatch(disableLoader());
