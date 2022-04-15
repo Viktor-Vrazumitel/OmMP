@@ -1,4 +1,3 @@
-import { useState } from "react";
 import style from "./AudioStream.module.css";
 
 function AudioStream() {
@@ -12,19 +11,19 @@ function AudioStream() {
     analyser,
     src,
     height,
-    stream;
+    stream,
+    micStream,
+    srcMic;
 
   num = 256;
   array = new Uint8Array(num * 2);
   width = 4.8;
 
-  const [music, setMusic] = useState("");
-
   async function goStream() {
     if (context) return;
     body = document.querySelector("#newid");
 
-    body.querySelector("#btn44").remove(); 
+    body.querySelector("#btn44").remove();
 
     for (let i = 0; i < num; i++) {
       logo = document.createElement("div");
@@ -49,17 +48,18 @@ function AudioStream() {
       },
     };
 
+    micStream = await navigator.mediaDevices.getUserMedia({
+      video: false,
+      audio: true,
+    });
+    srcMic = context.createMediaStreamSource(micStream);
+    srcMic.connect(analyser);
+
     stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-    // console.log(stream, stream.getAudioTracks());
+
     src = context.createMediaStreamSource(stream);
     src.connect(analyser);
     loop();
-
-    const mStrm = stream.getTracks()[0];
-    export {mStrm}
-    setMusic(mStrm);
-
-    console.log(music);
 
     function loop() {
       window.requestAnimationFrame(loop);
@@ -72,12 +72,27 @@ function AudioStream() {
     }
   }
 
+  function offOnMic() {
+    micStream.getTracks().find((track) => track.kind === "audio");
+    if (micStream.enabled) {
+      micStream.enabled = false;
+      context.suspend();
+      console.log(micStream.enabled);
+    } else {
+      micStream.enabled = true;
+      context.resume();
+    }
+  }
+
   return (
     <div id="newid" className={style.musicBox}>
       <canvas id="canvas1"></canvas>
       <button className={style.musicBtn} onClick={() => goStream()} id="btn44">
         Начать трансляцию
       </button>
+      <div onClick={() => offOnMic()} className={`material-icons ${style.mic}`}>
+        mic
+      </div>
     </div>
   );
 }
