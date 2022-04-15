@@ -3,7 +3,7 @@ const ws = require("ws");
 
 const wss = new ws.Server(
   {
-    port: 5001,
+    port: 5000,
   },
   () => console.log(`Server vzletel 5000`)
 );

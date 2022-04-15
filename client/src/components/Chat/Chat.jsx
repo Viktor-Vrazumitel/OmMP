@@ -12,7 +12,7 @@ const [state, setState] = useState(false)
 
 console.log(messages);
   function connect() {
-    socket.current = new WebSocket("ws://localhost:5001");
+    socket.current = new WebSocket("ws://localhost:5000");
     socket.current.onopen = () => {
       setConnected(true);
       const message = {
