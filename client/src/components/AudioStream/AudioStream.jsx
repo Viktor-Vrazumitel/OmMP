@@ -61,6 +61,8 @@ function AudioStream() {
     src.connect(analyser);
     loop();
 
+
+
     function loop() {
       window.requestAnimationFrame(loop);
       analyser.getByteFrequencyData(array);
