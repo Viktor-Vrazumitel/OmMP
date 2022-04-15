@@ -53,7 +53,7 @@ app.post("/search", async (req, res) => {
   const { login, userIn } = req.body;
   const user = await User.findOne({ where: { login } });
 
-  if (!user ) {
+  if (!user) {
     return res.json(null);
   }
 
