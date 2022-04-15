@@ -1,4 +1,3 @@
-import { URL_BASE } from "../../config";
 import style from "./AudioStream.module.css";
 
 function AudioStream() {
@@ -53,19 +52,11 @@ function AudioStream() {
       video: false,
       audio: true,
     });
-    // processStream(micStream, new MediaSource())
     srcMic = context.createMediaStreamSource(micStream);
     srcMic.connect(analyser);
 
     stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
 
-    console.log(stream);
-
-    fetch(`${URL_BASE}/audio`, {
-      method: "Post",
-      headers: { "Content-Type": "text/plain" },
-      body: stream,
-    });
     src = context.createMediaStreamSource(stream);
     src.connect(analyser);
     loop();
@@ -86,16 +77,10 @@ function AudioStream() {
     if (micStream.enabled) {
       micStream.enabled = false;
       context.suspend();
-      // for (let i = 0; i < num; i++) {
-      //   height = array[i + num];
-      //   myElements[i].style.height = 1 + "px";
-      //   myElements[i].style.opacity = 0.008 * height;
-      // }
       console.log(micStream.enabled);
     } else {
       micStream.enabled = true;
       context.resume();
-      // goStream();
     }
   }
 
