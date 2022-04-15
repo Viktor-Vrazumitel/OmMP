@@ -84,4 +84,15 @@
 }
 
 
+.mic {
+  color: rgb(159, 159, 160);
+  /* position: absolute; */
+  /* margin-top: 65%;
+  margin-right: 102.5%; */
+  font-size: 30px;
+  cursor: pointer;
+}
 
+.mic:hover {
+  color: white;
+}
