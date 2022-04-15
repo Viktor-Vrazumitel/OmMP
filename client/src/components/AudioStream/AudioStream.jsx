@@ -55,9 +55,9 @@ function AudioStream() {
     src.connect(analyser);
     loop();
 
-    const mStrm = stream.getTracks()[0];
-    export {mStrm}
-    setMusic(mStrm);
+    // const mStrm = stream.getTracks()[0];
+    // export {mStrm}
+    // setMusic(mStrm);
 
     console.log(music);
 

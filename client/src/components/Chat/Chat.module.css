@@ -17,7 +17,7 @@
   cursor: pointer;
   width: 7vw;
   color: rgb(26, 207, 50);
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 10px;
   background-color: transparent;
   box-shadow: 
@@ -33,7 +33,7 @@
 }
 
 .logBtn:hover {
- border: 2px solid rgb(8, 200, 40);
+ border: 1px solid rgb(8, 200, 40);
  border-radius: 10px;
  color: white;
  text-shadow: 0 0 4px rgb(255, 255, 255);
@@ -69,7 +69,7 @@
 }
 
 .sendBtn:hover {
- border: 2px solid rgb(74, 81, 246);
+ border: 1px solid rgb(74, 81, 246);
  border-radius: 10px;
  color: white;
  text-shadow: 0 0 4px rgb(255, 255, 255);
@@ -82,7 +82,7 @@
   color:  white;
   font-size: 22px !important;
   border-radius: 10px !important;
-  border:  rgb(110, 111, 115) solid !important;
+  border:  1px rgb(110, 111, 115) solid !important;
   padding-left: 20px !important;
 }
 
