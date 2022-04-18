@@ -91,7 +91,6 @@ app.post("/room", async (req, res) => {
   const rooms = await Room.findOne({ where: { title } });
   if (!rooms) {
     const room = await Room.create({ title, user_id });
-    console.log(room);
     return res.json(room);
   } else {
     res.json(Error);

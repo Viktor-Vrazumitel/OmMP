@@ -16,7 +16,7 @@ function MyRoom() {
   const inRoom = rooms.filter((el) => el.id === +id);
   const allUser = useSelector((state) => state.allUser);
   const userRoomName = allUser.filter((el) => el.id === inRoom[0].user_id);
-  console.log(userRoomName)
+ 
   useEffect(() => {
     if (userIn?.id === inRoom[0]?.user_id) {
       setStatus(false);

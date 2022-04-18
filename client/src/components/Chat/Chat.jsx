@@ -10,7 +10,7 @@ function ChatWindow() {
   const [username, setUsername] = useState("");
 const [state, setState] = useState(false)
 
-console.log(messages);
+
   function connect() {
     socket.current = new WebSocket("ws://localhost:5000");
     socket.current.onopen = () => {

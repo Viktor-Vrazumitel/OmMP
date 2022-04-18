@@ -79,7 +79,6 @@ function AudioStream() {
     if (micStream.enabled) {
       micStream.enabled = false;
       context.suspend();
-      console.log(micStream.enabled);
     } else {
       micStream.enabled = true;
       context.resume();
